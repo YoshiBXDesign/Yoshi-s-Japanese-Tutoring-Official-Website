@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Yoshi’s Japanese Tutoring</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="contact-page">
+
+    <!-- Global Header -->
+    <div id="global-header"></div>
+
+    <!-- Main -->
+    <main class="section mono-stack reveal">
+
+        <h1 class="section-title">Application</h1>
+
+        <p class="mono-lead" style="max-width: 640px;">
+            This service is designed for a small number of students at a time. To decide whether we are a genuine match,
+            I read every initial message carefully before suggesting any next steps.
+        </p>
+
+        <form action="https://formspree.io/f/maqlogab" method="POST" class="mono-stack"
+            style="max-width: 640px; width: 100%;">
+
+            <!-- Group 1: Profile -->
+            <div class="mono-block">
+                <p class="mono-subtitle">Profile</p>
+                <div class="mono-stack">
+
+                    <label class="mono-label">Full Name</label>
+                    <input type="text" name="name" class="mono-input" placeholder="Full Name" required>
+
+                    <label class="mono-label">Email Address</label>
+                    <input type="email" name="email" class="mono-input" placeholder="Email Address" required>
+
+                    <label class="mono-label">Current location and time zone</label>
+                    <input type="text" name="location_and_timezone" class="mono-input"
+                        placeholder="Current location and time zone" required>
+
+                </div>
+            </div>
+
+            <!-- Group 2: Current Status -->
+            <div class="mono-block">
+                <p class="mono-subtitle">Current Status</p>
+                <div class="mono-stack">
+
+                    <label class="mono-label">Your current Japanese level (in your own words)</label>
+                    <textarea name="current_japanese_level" class="mono-input" rows="4"
+                        placeholder="e.g., Self-studied for 6 months; I know basic greetings but struggle to build sentences."
+                        required></textarea>
+
+                    <label class="mono-label">Can you read and write all Hiragana and Katakana?</label>
+                    <select name="hiragana_katakana" class="mono-input" required>
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="learning">Still learning</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <!-- Group 3: Goals & Vision -->
+            <div class="mono-block">
+                <p class="mono-subtitle">Goals & Vision</p>
+                <div class="mono-stack">
+
+                    <label class="mono-label">Why do you need Japanese now?</label>
+                    <textarea name="why_japanese_now" class="mono-input" rows="4"
+                        placeholder="e.g., Relocating to the Tokyo office next spring and need to communicate directly with local teams."
+                        required></textarea>
+
+                    <label class="mono-label">What do you hope will be different 12–18 months from today?</label>
+                    <textarea name="vision_12_18_months" class="mono-input" rows="4"
+                        placeholder="e.g., Able to handle 1:1 lunch conversations in Japanese without an interpreter."
+                        required></textarea>
+
+                </div>
+            </div>
+
+            <!-- Agreement -->
+            <div class="mono-stack">
+                <label class="mono-note" style="display: flex; gap: 8px; align-items: flex-start;">
+                    <input type="checkbox" name="understanding_agreement" required>
+                    <span>I understand that this is a selective program, and submitting this form does not guarantee
+                        admission.</span>
+                </label>
+            </div>
+
+            <!-- CTA -->
+            <div>
+                <button type="submit" class="mono-btn">
+                    Submit Application →
+                </button>
+            </div>
+
+        </form>
+
+    </main>
+
+    <!-- Global Footer -->
+    <div id="global-footer"></div>
+
+
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

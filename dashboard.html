@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Yoshi’s Japanese Tutoring</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+    <!-- Global Header -->
+    <div id="global-header"></div>
+
+    <main>
+
+        <section class="mono-section reveal">
+            <div class="mono-container">
+
+                <!-- Welcome -->
+                <div class="mono-block mono-block-hero">
+                    <h1 class="mono-title">Your Practice Space</h1>
+                    <p class="mono-lead">A private environment for your ongoing work. All sessions, requests, and
+                        details are curated here.</p>
+                </div>
+
+                <!-- Booking -->
+                <div class="mono-block mono-block-action">
+                    <h2 class="mono-subtitle">Session Request</h2>
+                    <div class="mono-stack">
+                        <p class="mono-note">Select a suitable time from the calendar. Your session will be tentatively
+                            held until payment is completed.</p>
+                        <p class="mono-muted">When you are ready:</p>
+                        <a href="https://cal.com/yoshi.nihongomaster/sessions" class="mono-btn" target="_blank"
+                            rel="noopener noreferrer">Schedule a Session</a>
+                    </div>
+                </div>
+
+                <div class="mono-block mono-block-core">
+                    <h2 class="mono-subtitle">Payment & Confirmation</h2>
+                    <div class="mono-stack">
+                        <p class="mono-note">After reserving your time, please complete payment promptly using one of
+                            the methods below.</p>
+                        <p class="mono-muted">When you are ready:</p>
+                        <p class="mono-strong">Zelle — +1 425 465 9512</p>
+                        <p class="mono-strong">Cash App — $YoshinoriUeda</p>
+                        <div class="mono-policy-box">
+                            <p class="mono-eyebrow">PAYMENT POLICY</p>
+                            <p class="mono-strong">Your session is secured only after payment has been received and
+                                confirmed.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Global Footer -->
+    <div id="global-footer"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const isLoggedIn = localStorage.getItem("loggedIn");
+
+            // If not logged in, redirect to login page
+            if (isLoggedIn !== "true") {
+                window.location.href = "/login.html";
+                return;
+            }
+
+            // Force header into logged-in state (safety sync)
+            window.addEventListener("componentsLoaded", () => {
+                const header = document.querySelector(".site-header");
+                if (header) {
+                    header.classList.add("is-logged-in");
+                }
+            });
+        });
+    </script>
+    <script src="/assets/js/layout.js"></script>
+    <script src="/assets/js/motion.js"></script>
+    <script src="/assets/js/auth.js"></script>
+
+</body>
+
+</html>

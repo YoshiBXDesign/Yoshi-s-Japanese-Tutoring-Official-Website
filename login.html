@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Yoshi’s Japanese Tutoring</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <style>
+        .login-wrapper {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center
+        }
+
+        .login-form,
+        .login-result {
+            max-width: 520px;
+            margin: 0 auto
+        }
+
+        .login-status {
+            font-size: 1rem;
+            letter-spacing: .08em;
+            opacity: .85
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Global Header -->
+    <div id="global-header"></div>
+
+    <main>
+
+        <section class="mono-section">
+            <div class="mono-container">
+                <div class="login-wrapper">
+
+                    <div class="login-form" id="login-form">
+                        <h1 class="mono-title">Private Student Access</h1>
+
+                        <p class="mono-lead">
+                            Reserved for current students of Yoshi’s Japanese Tutoring. Please sign in to access your
+                            schedule and materials.
+                        </p>
+
+                        <div class="mono-stack">
+                            <input type="password" id="access-code" class="mono-input" placeholder="Enter Access Code"
+                                style="margin-bottom: 24px;">
+                            <p id="error-message" class="mono-note"
+                                style="display:none; opacity:0; margin-bottom:16px;">
+                                Incorrect access code. Please contact Yoshi.
+                            </p>
+                            <p>
+                                <button id="login-action" class="mono-btn" type="button">
+                                    Enter →
+                                </button>
+                            </p>
+                        </div>
+                        <p class="mono-note">
+                            If you were invited but cannot sign in, please contact Yoshi directly.
+                        </p>
+                    </div>
+
+                    <div class="login-result" id="login-result" style="display:none; opacity:0;">
+                        <p class="login-status">Authenticated.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Global Footer -->
+    <div id="global-footer"></div>
+
+    <!-- main.js deprecated: using motion.js + auth.js -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.getElementById("login-action");
+            const form = document.getElementById("login-form");
+            const result = document.getElementById("login-result");
+            const input = document.getElementById("access-code");
+            const error = document.getElementById("error-message");
+
+            if (!btn || !form || !result) return;
+
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                const value = input.value;
+                const validCodes = [
+                    "nihongomaster",
+                    // Add new student access codes here
+                ];
+
+                if (!validCodes.includes(value)) {
+                    if (error) {
+                        error.style.display = "block";
+                        error.style.transition = "opacity 600ms ease";
+                        requestAnimationFrame(() => {
+                            error.style.opacity = "1";
+                        });
+                    }
+                    return;
+                }
+
+                // correct password
+                localStorage.setItem("loggedIn", "true");
+                sessionStorage.setItem("justLoggedIn", "true");
+
+                form.style.transition = "opacity 800ms ease";
+                form.style.opacity = "0";
+
+                setTimeout(() => {
+                    form.style.display = "none";
+
+                    result.style.display = "block";
+                    result.style.opacity = "0";
+
+                    setTimeout(() => {
+                        result.style.transition = "opacity 800ms ease";
+                        requestAnimationFrame(() => {
+                            result.style.opacity = "1";
+                        });
+                    }, 50);
+
+                }, 800);
+
+                setTimeout(() => {
+                    window.location.href = "/dashboard.html";
+                }, 1600);
+            });
+        });
+    </script>
+
+    <script src="/assets/js/layout.js"></script>
+
+</body>
+
+</html>

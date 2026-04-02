@@ -1,0 +1,1259 @@
+ :root {
+     --navy: #003366;
+     --red: #D70000;
+ }
+
+ html,
+ body {
+     overflow-x: hidden;
+     width: 100%;
+ }
+
+ *,
+ *::before,
+ *::after {
+     box-sizing: border-box;
+ }
+
+ /***** HERO MONOLITH REBUILD *****/
+ /***** HERO MONOLITH REBUILD *****/
+
+ .hero-central {
+     min-height: calc(100vh - 80px);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     padding: 0;
+     /* remove top offset to keep true center */
+ }
+
+ /* 中央に“圧縮された塊”を作る */
+ .hero-inner-central {
+     width: min(90%, 680px);
+     margin: 0 auto;
+
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+
+     /* 上下に強制的な隔離空間 */
+     padding-top: 18vh;
+     padding-bottom: 6vh;
+
+     position: relative;
+     z-index: 1;
+
+     transform: translateY(-10vh);
+ }
+
+ /* シンボル（背景レイヤー化） */
+ .hero-symbol-wrapper {
+     position: absolute;
+     top: 60%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     pointer-events: none;
+     z-index: 0;
+ }
+
+ .hero-symbol-inline {
+     width: 1000px;
+     opacity: 1;
+     /* 初期はフル表示 */
+ }
+
+ /* ===== H1（支配レイヤー） ===== */
+ .hero-title-max {
+     font-family: "Sawarabi Mincho", serif;
+
+     /* 核：極端なスケール */
+     font-size: clamp(4rem, 15vw, 10rem);
+
+     line-height: 0.88;
+     letter-spacing: -0.06em;
+
+     color: var(--navy);
+
+     margin-bottom: 8px;
+
+     position: relative;
+     z-index: 2;
+ }
+
+ /* ===== H2（極端に小さく） ===== */
+ .hero-title-sub-central {
+     font-size: 1.4rem;
+     color: var(--red);
+
+     /* 意図的に距離を取る */
+     margin-bottom: 56px;
+ }
+
+ /* ===== 説明（さらに弱く） ===== */
+ .hero-description-central {
+     margin-bottom: 64px;
+ }
+
+ .hero-description-central p {
+     margin: 0 0 6px;
+     font-size: 0.95rem;
+     opacity: 0.75;
+ }
+
+ /* ===== CTA（低圧） ===== */
+ .hero-cta-area-central {
+     margin-top: 0;
+ }
+
+ /* ===== CTA LINK CENTRAL (Refined Arrow Animation) ===== */
+ .cta-link-central {
+     text-decoration: none;
+     border-bottom: 1px solid var(--navy);
+     color: var(--navy);
+
+     font-size: 0.9rem;
+     letter-spacing: 0.08em;
+
+     opacity: 0.8;
+ }
+
+ .cta-link-central .cta-arrow {
+     display: inline-block;
+     margin-left: 6px;
+     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+         opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+ }
+
+ .cta-link-central:hover .cta-arrow {
+     transform: translateX(6px);
+     opacity: 1;
+ }
+
+ /* Add initial state for animation */
+ .hero-title-max,
+ .hero-title-sub-central,
+ .hero-description-central,
+ .hero-cta-area-central {
+     opacity: 0;
+     transform: translateY(20px);
+ }
+
+ .cta-link-central {
+     text-decoration: none;
+     border-bottom: 1px solid var(--navy);
+     color: var(--navy);
+     letter-spacing: 0.08em;
+ }
+
+ .hero-title-max {
+     letter-spacing: -0.08em;
+     line-height: 0.85;
+ }
+
+ /* ===== HERO MOTION (FIXED) ===== */
+
+ .hero-central.hero-loaded .hero-title-max {
+     animation: fadeScale 2.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+     animation-delay: 0.8s;
+     will-change: opacity, transform;
+ }
+
+ .hero-central.hero-loaded .hero-symbol-wrapper {
+     animation: logoFadeOut 2.2s ease-out forwards;
+     animation-delay: 0.2s;
+ }
+
+ .hero-central.hero-loaded .hero-title-sub-central {
+     animation: fadeUp 1.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+     animation-delay: 1.2s;
+     will-change: opacity, transform;
+ }
+
+ .hero-central.hero-loaded .hero-description-central {
+     animation: fadeUp 1.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+     animation-delay: 1.7s;
+     will-change: opacity, transform;
+ }
+
+ .hero-central.hero-loaded .hero-cta-area-central {
+     animation: fadeUp 1.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+     animation-delay: 2.1s;
+     will-change: opacity, transform;
+ }
+
+ /* ===== KEYFRAMES ===== */
+
+ @keyframes fadeUp {
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ @keyframes fadeScale {
+     0% {
+         opacity: 0;
+         transform: scale(1.05);
+     }
+
+     100% {
+         opacity: 1;
+         transform: scale(1);
+     }
+ }
+
+ @keyframes logoFadeOut {
+     0% {
+         opacity: 1;
+     }
+
+     100% {
+         opacity: 0.1;
+     }
+ }
+
+ /* ===== VALUE (Monolith Typography) ===== */
+
+ /* ===== CONTACT (Monolith Closing) ===== */
+
+ /* ===== GLOBAL MONOLITH ENFORCER ===== */
+
+ /* 全セクションを中央支配に統一 */
+ .mono {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+
+     width: min(90%, 720px);
+     margin: 0 auto;
+ }
+
+ /* すべてのテキスト要素を中央に収束 */
+ .mono h2,
+ .mono h3,
+ .mono p,
+ .mono ul {
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ /* リストだけは可読性のため中央寄せ＋左揃え */
+ .mono ul {
+     text-align: left;
+     max-width: 480px;
+ }
+
+ /* ===== MONO STACK (force vertical single-column flow) ===== */
+ .mono-stack {
+     display: flex !important;
+     flex-direction: column !important;
+     align-items: center;
+     justify-content: center;
+
+     width: 100%;
+     margin: 0 auto;
+
+     gap: 32px;
+     /* vertical rhythm */
+ }
+
+ /* children normalization */
+ .mono-stack>* {
+     width: 100%;
+     max-width: 640px;
+     /* isolation band */
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ /* kill any grid behavior that breaks Monolith */
+ .mono-stack[class*="grid"],
+ .mono-stack[class*="panel"] {
+     display: flex !important;
+ }
+
+ /* text hierarchy normalization */
+ .mono-stack h2,
+ .mono-stack h3 {
+     font-family: "Sawarabi Mincho", serif;
+     letter-spacing: -0.04em;
+     margin-bottom: 12px;
+ }
+
+ .mono-stack p {
+     font-size: 0.78rem;
+     line-height: 2.05;
+     letter-spacing: 0.03em;
+     opacity: 0.58;
+     margin-top: 6px;
+ }
+
+ .mono-stack ul {
+     text-align: left;
+     max-width: 520px;
+     margin-top: 8px;
+ }
+
+ .mono-stack ul li {
+     margin-bottom: 12px;
+     line-height: 1.95;
+     opacity: 0.65;
+     font-size: 0.78rem;
+ }
+
+ /* tighter stack variant */
+ .mono-stack-tight {
+     gap: 18px;
+ }
+
+ /* セクション間の余白統一（Hero以下） */
+ .section {
+     padding: 14vh 0;
+ }
+
+ @media (max-width: 768px) {
+     .section {
+         padding: 10vh clamp(18px, 6vw, 30px);
+     }
+
+     /* prevent fixed-header overlap on About first section */
+     .about-page .section {
+         padding-top: max(150px, 16vh);
+     }
+
+     .contact-page .section {
+         padding-top: max(150px, 16vh);
+     }
+ }
+
+ /* ===== HERO TO FIRST SECTION TENSION ===== */
+ .hero-central+.section {
+     padding-top: 4vh;
+ }
+
+ /* ===== BLOCK TENSION (grouping vs isolation) ===== */
+
+ /* tighten inner grouping */
+ .mono-stack>*+* {
+     margin-top: 0;
+ }
+
+ /* emphasize section separation */
+ .section+.section {
+     margin-top: 5vh;
+ }
+
+ /* ===== SCROLL MOTION (Emergence from Silence) ===== */
+
+ /* initial state (enforced strictly to prevent ID specificity overrides) */
+ .reveal h2:not(.is-visible),
+ .reveal h3:not(.is-visible),
+ .reveal .eyebrow:not(.is-visible),
+ .reveal p:not(.is-visible),
+ .reveal li:not(.is-visible),
+ .reveal .mono-stack>*:not(.is-visible),
+ .reveal .value-highlight:not(.is-visible) {
+     opacity: 0 !important;
+     transform: translateY(12px) !important;
+     will-change: opacity, transform;
+ }
+
+ /* container becomes visible (no transform on container to avoid layout shift) */
+ .reveal.is-visible {
+     /* no-op for container; children handle motion */
+ }
+
+ /* headings: slower, earlier */
+ .reveal h2.is-visible,
+ .reveal h3.is-visible,
+ .reveal .eyebrow.is-visible {
+     opacity: 1;
+     transform: translateY(0);
+     transition: opacity 1.2s cubic-bezier(0.2, 0, 0, 1),
+         transform 1.2s cubic-bezier(0.2, 0, 0, 1);
+ }
+
+ /* body: slightly later, same easing */
+ .reveal p.is-visible,
+ .reveal li.is-visible,
+ .reveal .mono-stack>*.is-visible,
+ .reveal .value-highlight.is-visible {
+     opacity: 1;
+     transform: translateY(0);
+     transition: opacity 1.2s cubic-bezier(0.2, 0, 0, 1),
+         transform 1.2s cubic-bezier(0.2, 0, 0, 1);
+ }
+
+ /* subtle overall opacity ramp for entire section to reinforce mass */
+ .reveal {
+     opacity: 1;
+     /* keep container visible; children carry motion */
+ }
+
+ @media (max-width: 768px) {
+
+     .reveal h2.is-visible,
+     .reveal h3.is-visible,
+     .reveal p.is-visible,
+     .reveal li.is-visible,
+     .reveal .mono-stack>*.is-visible {
+         transition-duration: 1.1s;
+     }
+ }
+
+ /* ===== QUIET RAIL HEADER ===== */
+
+ .site-header {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     z-index: 100;
+
+     /* 極限まで存在を消す */
+     background: rgba(255, 255, 255, 0.02);
+     backdrop-filter: blur(6px);
+
+     transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1),
+         opacity 0.6s cubic-bezier(0.2, 0, 0, 1);
+ }
+
+ /* 内部レイアウト */
+ .header-inner {
+     width: min(100%, 720px);
+     margin: 0 auto;
+     padding: 20px 24px;
+
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ /* ロゴ */
+ .header-logo {
+     height: 85px;
+     width: auto;
+     opacity: 0.8;
+     transition: opacity 0.3s ease;
+ }
+
+ .header-logo-link:hover .header-logo {
+     opacity: 1;
+ }
+
+ /* ナビ */
+ .header-nav {
+     display: flex;
+     gap: 16px;
+ }
+
+ /* リンク */
+ .header-link {
+     font-size: 0.8rem;
+     letter-spacing: 0.06em;
+     text-decoration: none;
+     color: var(--navy);
+
+     opacity: 0.6;
+     transition: opacity 0.3s ease;
+ }
+
+ .header-link:hover {
+     opacity: 1;
+ }
+
+ /* ===== SCROLL BEHAVIOR ===== */
+
+ /* 下スクロールで消える */
+ .site-header.hide {
+     transform: translateY(-100%);
+     opacity: 0;
+ }
+
+ /* 上スクロールで出る */
+ .site-header.show {
+     transform: translateY(0);
+     opacity: 1;
+ }
+
+ /* ===== HEADER PRIVATE FLOW (NON-DESTRUCTIVE ADDITION) ===== */
+
+ /* group layout inside header-nav */
+ .nav-default,
+ .nav-private {
+     display: flex;
+     align-items: center;
+     gap: 16px;
+ }
+
+ /* default: show public, hide private */
+ .nav-private {
+     display: none;
+ }
+
+ /* when logged-in, swap groups */
+ .site-header.is-logged-in .nav-default {
+     display: none;
+ }
+
+ .site-header.is-logged-in .nav-private {
+     display: flex;
+ }
+
+ /* subtle Login/Logout link treatment */
+ .header-login {
+     opacity: 0.7;
+     font-size: 0.75rem;
+ }
+
+ .header-login:hover {
+     opacity: 0.9;
+ }
+
+ /* ===== NAV COMBO BASE (DESKTOP FIRST) ===== */
+
+ .nav-combo {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     position: relative;
+ }
+
+ .nav-drawer {
+     display: flex;
+     align-items: center;
+     gap: 16px;
+ }
+
+ /* hamburger hidden on desktop */
+ .mono-hamburger {
+     display: none;
+ }
+
+
+ /* ===== LOGIN MONOLITH UI ===== */
+
+ .login-wrapper {
+     min-height: calc(100vh - 120px);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     text-align: center;
+ }
+
+ .login-form {
+     transition: opacity 0.8s ease;
+ }
+
+ .login-result {
+     display: none;
+     opacity: 0;
+ }
+
+ .login-status {
+     font-family: "Sawarabi Mincho", serif;
+     font-size: 1.2rem;
+     letter-spacing: 0.08em;
+     opacity: 0.7;
+ }
+
+ /* tighten login spacing */
+ .login-form .mono-title {
+     margin-bottom: 24px;
+ }
+
+ .login-form .mono-lead {
+     margin-bottom: 48px;
+     opacity: 0.5;
+ }
+
+ .login-form .mono-link {
+     font-size: 0.85rem;
+     letter-spacing: 0.12em;
+     opacity: 0.7;
+     border-bottom: 1px solid var(--navy);
+     text-decoration: none;
+     color: var(--navy);
+ }
+
+ .login-form .mono-link:hover {
+     opacity: 1;
+ }
+
+ /* ===== DASHBOARD MONOLITH TUNING ===== */
+
+ .mono-container {
+     width: min(90%, 720px);
+     margin: 0 auto;
+ }
+
+ .mono-block {
+     margin-bottom: 140px;
+     /* stronger vertical isolation */
+ }
+
+ .mono-block:last-child {
+     margin-bottom: 0;
+ }
+
+ .mono-subtitle {
+     font-family: "Sawarabi Mincho", serif;
+     font-size: clamp(2.8rem, 6vw, 3.6rem);
+     letter-spacing: -0.05em;
+     opacity: 0.98;
+     margin-bottom: 72px;
+     line-height: 1.05;
+ }
+
+ .mono-subtitle-strong {
+     font-size: clamp(2.2rem, 5vw, 3rem);
+     letter-spacing: -0.06em;
+     line-height: 1.02;
+     margin-bottom: 36px;
+ }
+
+ /* ===== EDITORIAL HIERARCHY (Eyebrow System) ===== */
+
+
+ .mono-heading-group {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-bottom: 40px;
+ }
+
+ /* tighten relationship between heading and portrait (Founder block) */
+ .mono-block[style*="text-align: center"] .mono-heading-group {
+     margin-bottom: 24px;
+ }
+
+ /* Eyebrow-only (Founder) visual balance */
+ .mono-block[style*="text-align: center"] .mono-eyebrow {
+     margin-bottom: 16px;
+     letter-spacing: 0.18em;
+     opacity: 0.6;
+ }
+
+ .mono-eyebrow {
+     font-size: 0.75rem;
+     letter-spacing: 0.15em;
+     text-transform: uppercase;
+     opacity: 0.5;
+     margin-bottom: 12px;
+ }
+
+
+ .mono-heading {
+     font-family: "Sawarabi Mincho", serif;
+     font-size: clamp(2.2rem, 5vw, 2.8rem);
+     line-height: 1.1;
+     margin-bottom: 0;
+ }
+
+ /* ===== MONO TEXT RHYTHM TUNING ===== */
+ .mono-block p {
+     line-height: 1.9;
+     margin-top: 8px;
+ }
+
+ .mono-block ul {
+     margin-top: 12px;
+ }
+
+ .mono-block ul li {
+     margin-bottom: 10px;
+     line-height: 1.9;
+ }
+
+ /* tighten stack inside blocks */
+ .mono-block .mono-stack {
+     gap: 20px;
+ }
+
+ /* links in dashboard feel quieter */
+ .mono-block .mono-link {
+     font-size: 0.8rem;
+     letter-spacing: 0.1em;
+     opacity: 0.6;
+     color: var(--navy);
+     text-decoration: none;
+ }
+
+ .mono-block .mono-link:hover {
+     opacity: 1;
+ }
+
+ /* ===== BOOKING INPUT (MONOLITH FORM) ===== */
+
+ .mono-input {
+     width: 100%;
+     max-width: 420px;
+
+     background: transparent;
+     border: none;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+     padding: 8px 4px;
+
+     font-size: 0.9rem;
+     letter-spacing: 0.05em;
+     text-align: left;
+
+     outline: none;
+
+     opacity: 0.7;
+     transition: opacity 0.3s ease, border-color 0.3s ease;
+ }
+
+ .mono-input:focus {
+     opacity: 1;
+     border-bottom: 1px solid var(--navy);
+ }
+
+ .mono-input::placeholder {
+     opacity: 0.4;
+     letter-spacing: 0.04em;
+ }
+
+ /* button as text (non-button feel) */
+ #request-btn {
+     background: none;
+     border: none;
+     cursor: pointer;
+     padding: 0;
+ }
+
+ #request-btn:hover {
+     opacity: 1;
+ }
+
+ /* ===== DASHBOARD HIERARCHY ENHANCEMENT ===== */
+
+ .mono-block-hero {
+     margin-bottom: 160px;
+ }
+
+ .mono-block-core {
+     margin-bottom: 140px;
+ }
+
+ .mono-strong {
+     font-size: 1.05rem;
+     letter-spacing: 0.02em;
+     opacity: 0.9;
+ }
+
+ /* action emphasis but still quiet */
+ .mono-block-action {
+     margin-top: 80px;
+     margin-bottom: 160px;
+ }
+
+ .mono-link-primary {
+     font-size: 1rem;
+     letter-spacing: 0.12em;
+     opacity: 0.9;
+     color: var(--navy);
+     text-decoration: none;
+ }
+
+ .mono-link-cta {
+     font-size: 1.1rem;
+     letter-spacing: 0.14em;
+     opacity: 1;
+     border-bottom: 1px solid var(--navy);
+     padding-bottom: 4px;
+     transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+     color: var(--navy);
+     text-decoration: none;
+ }
+
+ .mono-link-cta:hover {
+     letter-spacing: 0.18em;
+     opacity: 1;
+ }
+
+ .mono-link-primary:hover {
+     opacity: 1;
+ }
+
+ /* muted settings */
+ .mono-block-muted {
+     opacity: 0.5;
+ }
+
+ .mono-muted {
+     opacity: 0.5;
+     font-size: 0.85rem;
+ }
+
+ /* ===== PAGE TOP OFFSET FIX ===== */
+ .mono-container {
+     padding-top: 120px;
+ }
+
+ /* prevent header overlap on first title */
+ .mono-container .mono-block-hero {
+     margin-top: 40px;
+ }
+
+ /* ===== METHOD PAGE TUNING ===== */
+
+ /* step titles feel slightly more sequential (less aggressive than fit) */
+ .method-page .mono-subtitle-strong {
+     font-size: clamp(2.8rem, 6vw, 3.6rem);
+     letter-spacing: -0.05em;
+ }
+
+ /* body slightly more readable (process explanation) */
+ .method-page .mono-stack p {
+     font-size: 0.85rem;
+     line-height: 1.85;
+     opacity: 0.65;
+ }
+
+ /* ===== METHOD STEPS (GAP SYSTEM) ===== */
+ .method-steps-container {
+     display: flex;
+     flex-direction: column;
+     gap: clamp(260px, 28vh, 360px);
+     width: 100%;
+ }
+
+ .method-step {
+     position: relative;
+     width: 100%;
+ }
+
+
+ /* ===== METHOD FLOW LOCK (1→2→3 visual gravity) ===== */
+
+ /* remove visual compression caused by transform */
+ .method-page .mono-block {
+     transform: none;
+ }
+
+ /* subtle opacity compression for forward motion perception */
+ .method-page .mono-block:nth-of-type(2),
+ .method-page .mono-block:nth-of-type(3),
+ .method-page .mono-block:nth-of-type(4) {
+     opacity: 0.96;
+ }
+
+ /* reinforce linear reading by narrowing later steps slightly */
+ .method-page .mono-block:nth-of-type(3) .mono-stack>*,
+ .method-page .mono-block:nth-of-type(4) .mono-stack>* {
+     max-width: 600px;
+ }
+
+ /* ===== METHOD STEP NUMBER (BACKGROUND MASS) ===== */
+
+ /* ===== METHOD STEP NUMBER (BACKGROUND MASS) ===== */
+ .mono-step-number {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+
+     font-family: "Sawarabi Mincho", serif;
+     font-size: clamp(12rem, 25vw, 20rem);
+     letter-spacing: -0.08em;
+     line-height: 1;
+
+     opacity: 0.1;
+
+     pointer-events: none;
+     z-index: 0;
+     white-space: nowrap;
+ }
+
+ .mono-step {
+     position: relative;
+ }
+
+ .mono-step-content {
+     position: relative;
+     z-index: 1;
+ }
+
+ .mono-step-inner {
+     position: relative;
+ }
+
+ .method-page .mono-step-content {
+     padding-left: 8px;
+ }
+
+ /* align number and title as a single visual block */
+ .method-page .mono-block>.mono-step-number+.mono-subtitle {
+     margin-top: 0;
+ }
+
+ /* slightly stronger presence and overlap precision on larger screens */
+ @media (min-width: 1024px) {
+     .mono-step-number {
+         font-size: clamp(14rem, 22vw, 22rem);
+         opacity: 0.08;
+     }
+ }
+
+ /* ===== FOOTER MONOLITH (Editorial Stack) ===== */
+
+ .site-footer {
+     padding: 160px 0 80px;
+     display: flex;
+     justify-content: center;
+ }
+
+ .footer-inner {
+     width: min(90%, 720px);
+     margin: 0 auto;
+
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+
+     gap: 28px;
+ }
+
+ /* ===== Layer 1: Primary ===== */
+ .footer-primary {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 18px;
+ }
+
+ .footer-primary .footer-link {
+     font-size: 0.9rem;
+     letter-spacing: 0.08em;
+     opacity: 0.85;
+ }
+
+ /* ===== Layer 2: Legal ===== */
+ .footer-legal {
+     display: flex;
+     gap: 16px;
+ }
+
+ .footer-legal .footer-link {
+     font-size: 0.75rem;
+     letter-spacing: 0.06em;
+     opacity: 0.6;
+ }
+
+ /* ===== Layer 3: Social ===== */
+ .footer-social {
+     display: flex;
+     gap: 14px;
+ }
+
+ .footer-social .footer-link {
+     font-size: 0.7rem;
+     letter-spacing: 0.06em;
+     opacity: 0.5;
+ }
+
+ /* ===== Layer 4: Copyright ===== */
+ .footer-copy {
+     font-size: 0.65rem;
+     letter-spacing: 0.04em;
+     opacity: 0.4;
+     margin-top: 8px;
+ }
+
+ /* ===== Shared Link Behavior ===== */
+ .footer-link {
+     text-decoration: none;
+     color: var(--navy);
+     transition: opacity 0.25s ease;
+ }
+
+ .footer-link:hover {
+     opacity: 1;
+ }
+
+ /* ===== Mobile Tuning ===== */
+ @media (max-width: 768px) {
+     .site-footer {
+         padding: 120px 0 60px;
+     }
+
+     .footer-inner {
+         gap: 22px;
+     }
+
+     .footer-primary {
+         gap: 14px;
+     }
+ }
+
+ /* ===== MONO LABEL (Form Question) ===== */
+ .mono-label {
+     font-size: 0.75rem;
+     letter-spacing: 0.04em;
+     opacity: 0.6;
+     margin-bottom: 6px;
+     display: block;
+     text-align: left;
+ }
+
+ /* ===== MONO BUTTON (HIGH-END ACTION UI) ===== */
+
+ .mono-btn {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+
+     width: auto !important;
+
+     padding: 0.8rem 2rem;
+
+     background: #003366;
+     color: #f7f4ee;
+
+     border-radius: 5px;
+     border: 1px solid rgba(0, 0, 0, 0.1);
+
+     font-size: 0.9rem;
+     font-weight: 500;
+     letter-spacing: 0.08em;
+     text-decoration: none;
+
+     box-shadow: none;
+
+     transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1) !important;
+ }
+
+ .mono-btn:hover {
+     background: #00264d;
+     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+     letter-spacing: 0.1em;
+ }
+
+ .mono-btn-secondary {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+
+     width: auto !important;
+
+     padding: 0.8rem 2rem;
+
+     background: transparent;
+     color: var(--navy);
+
+     border-radius: 5px;
+     border: 1px solid rgba(0, 0, 0, 0.18);
+
+     font-size: 0.9rem;
+     font-weight: 500;
+     letter-spacing: 0.06em;
+     text-decoration: none;
+
+     box-shadow: none;
+
+     transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+ }
+
+ .mono-btn-secondary:hover {
+     background: rgba(0, 0, 0, 0.03);
+     letter-spacing: 0.1em;
+ }
+
+ /* ===== MONO POLICY BOX (Isolation Rule Highlight) ===== */
+
+ .mono-policy-box {
+     width: 100%;
+     max-width: 640px;
+
+     margin: 40px auto 0;
+
+     padding: 1.2rem 1.6rem;
+
+     border-left: 2px solid #D70000;
+     background: rgba(0, 0, 0, 0.06);
+
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+
+     gap: 12px;
+ }
+
+ .mono-policy-box .mono-eyebrow {
+     margin-bottom: 4px;
+     opacity: 0.6;
+ }
+
+ .mono-policy-box .mono-strong {
+     font-size: 0.95rem;
+     line-height: 1.8;
+     letter-spacing: 0.02em;
+ }
+
+
+ /* ===== MOBILE FIRST UX TUNING ===== */
+ @media (max-width: 768px) {
+
+     /* --- HERO TYPOGRAPHY --- */
+     .hero-title-max {
+         font-size: clamp(2.4rem, 8vw, 3.4rem);
+         line-height: 1.08;
+     }
+
+     /* --- SECTION SPACING --- */
+     .section {
+         padding: 4rem clamp(18px, 6vw, 30px);
+     }
+
+     /* --- BUTTON TAP INTERACTION --- */
+     .mono-btn:active {
+         filter: brightness(0.92);
+         transform: translateY(1px);
+         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+         transition:
+             transform 120ms ease,
+             filter 260ms ease,
+             box-shadow 260ms ease;
+     }
+
+     .mono-btn-secondary:active {
+         filter: brightness(0.95);
+         transform: translateY(1px);
+         transition:
+             transform 120ms ease,
+             filter 260ms ease;
+     }
+
+     /* --- LINK TAP FEEDBACK --- */
+     a:active {
+         opacity: 0.7;
+         transition: opacity 180ms ease;
+     }
+
+
+     /* ===== MOBILE NAV (COMBO MENU) ===== */
+
+     .nav-drawer {
+         position: fixed;
+         top: 0;
+         right: 0;
+         height: 100vh;
+         width: 40vw;
+
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         justify-content: flex-start;
+         gap: 36px;
+
+         padding: 116px 28px 36px;
+
+         background: rgba(255, 255, 255, 0.78);
+         backdrop-filter: blur(40px) saturate(170%);
+         -webkit-backdrop-filter: blur(40px) saturate(170%);
+         box-shadow: -18px 0 44px rgba(0, 0, 0, 0.12);
+         border-left: 1px solid rgba(255, 255, 255, 0.45);
+         z-index: 105;
+
+         opacity: 0;
+         pointer-events: none;
+         transform: translateX(110%);
+
+         transition:
+             transform 0.62s cubic-bezier(0.22, 1, 0.36, 1),
+             opacity 0.42s ease;
+     }
+
+     .nav-default,
+     .nav-private {
+         flex-direction: column;
+         width: 100%;
+         align-items: flex-start;
+         justify-content: flex-start;
+         text-align: left;
+         gap: 18px;
+     }
+
+
+     /* ===== HAMBURGER (MONO) ===== */
+
+     .mono-hamburger {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         gap: 5px;
+
+         width: 32px;
+         height: 32px;
+
+         background: transparent;
+         border: none;
+         cursor: pointer;
+         z-index: 110;
+         margin-right: 10px;
+         transform: translateX(-4px);
+         position: relative;
+     }
+
+     .mono-hamburger-bar {
+         width: 20px;
+         height: 1px;
+         background: var(--navy);
+         opacity: 0.8;
+
+         transition:
+             transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+             opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+     }
+
+     /* ===== NAV COMBO STRUCTURE ===== */
+
+     .nav-combo[data-state="open"] .nav-drawer {
+         opacity: 1;
+         transform: translateX(0);
+         pointer-events: auto;
+     }
+
+     /* hamburger animation (parent-based, robust) */
+     .nav-combo[data-state="open"] .mono-hamburger-bar:nth-child(1) {
+         transform: translateY(6px) rotate(45deg);
+     }
+
+     .nav-combo[data-state="open"] .mono-hamburger-bar:nth-child(2) {
+         opacity: 0;
+     }
+
+     .nav-combo[data-state="open"] .mono-hamburger-bar:nth-child(3) {
+         transform: translateY(-6px) rotate(-45deg);
+     }
+
+     /* spacing */
+     .nav-default .header-link {
+         font-size: 0.95rem;
+         letter-spacing: 0.08em;
+         opacity: 0.8;
+         width: 100%;
+         text-align: left;
+     }
+
+     .header-inner {
+         gap: 12px;
+         padding: 20px 6vw;
+     }
+
+     /* --- HERO SYMBOL & LOGO TUNING --- */
+     .hero-symbol-inline {
+         width: 135vw;
+         max-width: 800px;
+     }
+
+     .header-logo {
+         height: 75px;
+     }
+ }
