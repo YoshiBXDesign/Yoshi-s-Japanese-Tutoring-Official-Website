@@ -1180,6 +1180,23 @@
          gap: 18px;
      }
 
+     /* enforce auth visibility in mobile drawer */
+     .site-header:not(.is-logged-in) .nav-default {
+         display: flex !important;
+     }
+
+     .site-header:not(.is-logged-in) .nav-private {
+         display: none !important;
+     }
+
+     .site-header.is-logged-in .nav-default {
+         display: none !important;
+     }
+
+     .site-header.is-logged-in .nav-private {
+         display: flex !important;
+     }
+
 
      /* ===== HAMBURGER (MONO) ===== */
 

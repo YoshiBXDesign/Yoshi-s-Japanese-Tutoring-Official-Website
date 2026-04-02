@@ -41,13 +41,13 @@
                     headings.forEach((h, i) => {
                         setTimeout(() => {
                             h.classList.add("is-visible");
-                        }, baseDelay + (isMethodPage ? 300 + i * 180 : 100 + i * 80));
+                        }, baseDelay + (isMethodPage ? 220 + i * 140 : 80 + i * 60));
                     });
 
                     bodies.forEach((b, i) => {
                         setTimeout(() => {
                             b.classList.add("is-visible");
-                        }, baseDelay + (isMethodPage ? 900 + i * 160 : 600 + i * 150));
+                        }, baseDelay + (isMethodPage ? 420 + i * 130 : 260 + i * 110));
                     });
 
                     observer.unobserve(el);

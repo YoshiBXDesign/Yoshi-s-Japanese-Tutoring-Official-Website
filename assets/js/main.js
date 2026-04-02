@@ -84,10 +84,11 @@
         });
 
         /* ===== LOGIN STATE RESTORE ===== */
-        const isLoggedIn = localStorage.getItem("loggedIn");
-        if (isLoggedIn === "true") {
+        const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+        if (isLoggedIn) {
             header.classList.add("is-logged-in");
         } else {
+            localStorage.removeItem("loggedIn");
             header.classList.remove("is-logged-in");
         }
 

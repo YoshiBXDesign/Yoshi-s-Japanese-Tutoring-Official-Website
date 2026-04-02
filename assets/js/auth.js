@@ -31,6 +31,7 @@
         if (isLoggedIn()) {
             header.classList.add("is-logged-in");
         } else {
+            localStorage.removeItem("loggedIn");
             header.classList.remove("is-logged-in");
         }
     }
