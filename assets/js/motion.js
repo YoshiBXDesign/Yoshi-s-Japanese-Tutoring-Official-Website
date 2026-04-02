@@ -23,20 +23,44 @@
 
     /* ===== SCROLL REVEAL ===== */
     function initScrollReveal() {
-        const reveals = document.querySelectorAll(".reveal");
+        const revealRoots = document.querySelectorAll(".reveal");
+        const blockSelector = [
+            ".mono-block",
+            ".method-step",
+            ".mono-block-action",
+            ".mono-block-hero",
+            ".mono-block-core",
+            ".mono-block-muted",
+            ".value-card",
+            ".feature-card"
+        ].join(", ");
+        const targets = [];
+
+        revealRoots.forEach((root) => {
+            const blocks = Array.from(root.querySelectorAll(blockSelector));
+            if (blocks.length > 0) {
+                targets.push(...blocks);
+            } else {
+                // Fallback for pages where .reveal itself is the only meaningful unit.
+                targets.push(root);
+            }
+        });
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    const el = entry.target;
+                    const block = entry.target;
                     const isMethodPage = document.body.classList.contains("method-page");
-                    const blockIndex = Array.from(document.querySelectorAll(".reveal")).indexOf(el);
-                    const baseDelay = isMethodPage ? blockIndex * 200 : 0;
+                    const revealRoot = block.closest(".reveal");
+                    const baseDelay = 0;
 
-                    el.classList.add("is-visible");
+                    block.classList.add("is-visible");
+                    if (revealRoot) {
+                        revealRoot.classList.add("is-visible");
+                    }
 
-                    const headings = el.querySelectorAll("h2, h3, .eyebrow");
-                    const bodies = el.querySelectorAll("p, li, .mono-stack > *, .value-highlight");
+                    const headings = block.querySelectorAll("h2, h3, .eyebrow");
+                    const bodies = block.querySelectorAll("p, li, .mono-stack > *, .value-highlight");
 
                     headings.forEach((h, i) => {
                         setTimeout(() => {
@@ -50,14 +74,14 @@
                         }, baseDelay + (isMethodPage ? 420 + i * 130 : 260 + i * 110));
                     });
 
-                    observer.unobserve(el);
+                    observer.unobserve(block);
                 }
             });
         }, {
-            threshold: 0.2
+            threshold: 0.45
         });
 
-        reveals.forEach((el) => observer.observe(el));
+        targets.forEach((target) => observer.observe(target));
     }
 
     /* ===== HEADER SCROLL ===== */
