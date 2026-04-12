@@ -84,11 +84,11 @@
         });
 
         /* ===== LOGIN STATE RESTORE ===== */
-        const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+        const isLoggedIn = sessionStorage.getItem("loggedIn") === "true";
         if (isLoggedIn) {
             header.classList.add("is-logged-in");
         } else {
-            localStorage.removeItem("loggedIn");
+            sessionStorage.removeItem("loggedIn");
             header.classList.remove("is-logged-in");
         }
 
@@ -99,7 +99,7 @@
                 e.preventDefault();
 
                 // clear auth state
-                localStorage.removeItem("loggedIn");
+                sessionStorage.removeItem("loggedIn");
 
                 // reset header UI
                 header.classList.remove("is-logged-in");

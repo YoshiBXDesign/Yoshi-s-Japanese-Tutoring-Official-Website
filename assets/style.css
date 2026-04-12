@@ -1149,6 +1149,34 @@
     background: rgba(0, 0, 0, 0.06);
 }
 
+/* セッション注意ブロック */
+.session-note {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* 小さな導入 */
+.session-note-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    opacity: 0.45;
+    margin-bottom: 12px;
+}
+
+/* 本文 */
+.session-note-body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+}
+
+/* Meet linkの行をほんのわずかに強調 */
+.session-note-body:first-of-type {
+    font-weight: 500;
+}
+
 
 /* ===== MOBILE FIRST UX TUNING ===== */
 @media (max-width: 768px) {

@@ -1,14 +1,14 @@
 (function () {
     /* ===== AUTH STATE ===== */
     function isLoggedIn() {
-        return localStorage.getItem("loggedIn") === "true";
+        return sessionStorage.getItem("loggedIn") === "true";
     }
 
     function setLoggedIn(state) {
         if (state) {
-            localStorage.setItem("loggedIn", "true");
+            sessionStorage.setItem("loggedIn", "true");
         } else {
-            localStorage.removeItem("loggedIn");
+            sessionStorage.removeItem("loggedIn");
         }
     }
 
@@ -31,7 +31,7 @@
         if (isLoggedIn()) {
             header.classList.add("is-logged-in");
         } else {
-            localStorage.removeItem("loggedIn");
+            sessionStorage.removeItem("loggedIn");
             header.classList.remove("is-logged-in");
         }
     }

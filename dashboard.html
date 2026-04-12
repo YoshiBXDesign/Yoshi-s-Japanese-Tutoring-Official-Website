@@ -71,8 +71,16 @@
                     </div>
                     <div class="mono-stack">
                         <p class="mono-note">Once payment has been verified, Yoshi will approve your request and you
-                            will receive an official confirmation email. At that point, your reserved time becomes
-                            fully secured and no further action is required.</p>
+                            will receive an automated confirmation email from the scheduling system.</p>
+                        <p class="mono-strong" style="margin: 12px 0;">This email will contain the Google Meet link
+                            for your session. Please keep it accessible and enter the room at your scheduled time.</p>
+                        <p class="mono-note">At that point, your reserved time becomes fully secured and no further
+                            action is required.</p>
+                        <div class="session-note">
+                            <p class="session-note-eyebrow">SESSION ACCESS</p>
+                            <p class="session-note-body">This email will contain the Google Meet link for your session.</p>
+                            <p class="session-note-body">Please keep it accessible and enter the room at your scheduled time.</p>
+                        </div>
                         <div class="mono-policy-box">
                             <p class="mono-eyebrow">PAYMENT POLICY</p>
                             <p class="mono-strong">A reserved time becomes a confirmed session only after payment has
@@ -92,7 +100,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const isLoggedIn = localStorage.getItem("loggedIn");
+            const isLoggedIn = sessionStorage.getItem("loggedIn");
 
             // If not logged in, redirect to login page
             if (isLoggedIn !== "true") {
