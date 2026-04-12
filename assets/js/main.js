@@ -1,4 +1,9 @@
 (function () {
+    // Cleanup legacy auth flag left in localStorage from old login implementation.
+    if (localStorage.getItem("loggedIn") !== null) {
+        localStorage.removeItem("loggedIn");
+    }
+
     function triggerHero() {
         const hero = document.querySelector(".hero-central");
         if (hero && !hero.classList.contains("hero-loaded")) {
