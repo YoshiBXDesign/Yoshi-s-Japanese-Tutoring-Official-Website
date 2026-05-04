@@ -57,11 +57,13 @@
      z-index: 0;
  }
 
- .hero-symbol-inline {
-     width: 1000px;
-     opacity: 1;
-     /* 初期はフル表示 */
- }
+.hero-symbol-inline {
+    width: 1000px;
+    max-width: none;
+    height: auto;
+    opacity: 1;
+    /* 初期はフル表示 */
+}
 
  /* ===== H1（支配レイヤー） ===== */
  .hero-title-max {
@@ -1349,6 +1351,7 @@
      .hero-symbol-inline {
          width: 135vw;
          max-width: 800px;
+         height: auto;
      }
 
      .header-logo {
