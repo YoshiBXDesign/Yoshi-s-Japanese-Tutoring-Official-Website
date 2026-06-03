@@ -1358,3 +1358,447 @@
          height: 75px;
      }
  }
+
+/* ===== JAPAN TRAVEL LP ===== */
+
+.travel-page {
+    margin: 0;
+    background: #fff;
+    color: #0f1720;
+    font-family: "Noto Sans JP", sans-serif;
+    scroll-behavior: smooth;
+}
+
+.travel-page main {
+    position: relative;
+}
+
+.travel-page strong {
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.travel-page .section {
+    scroll-margin-top: 120px;
+}
+
+.travel-block {
+    scroll-margin-top: 120px;
+}
+
+.travel-hero {
+    min-height: 100svh;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.travel-hero-inner {
+    width: min(88%, 860px);
+    min-height: calc(100svh - 88px);
+    padding-top: clamp(92px, 12vh, 120px);
+    padding-bottom: clamp(40px, 6vh, 60px);
+    justify-content: space-between;
+    transform: none;
+}
+
+.travel-hero-copy-block {
+    width: 100%;
+    margin: auto 0;
+    transform: translateY(-10px);
+}
+
+.travel-kicker {
+    margin: 0 0 24px;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    opacity: 0.45;
+}
+
+.travel-hero-title {
+    width: min(100%, 820px);
+    margin: 0 auto 20px;
+    font-size: clamp(4.4rem, 12vw, 8.8rem);
+    line-height: 0.9;
+}
+
+.travel-hero-subtitle {
+    width: min(100%, 720px);
+    margin: 0 auto 36px;
+    font-family: "Sawarabi Mincho", serif;
+    color: rgba(0, 51, 102, 0.86);
+    font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+}
+
+.travel-hero-copy {
+    margin-bottom: 0;
+}
+
+.travel-hero-copy p {
+    font-size: 0.92rem;
+    letter-spacing: 0.04em;
+    opacity: 0.68;
+}
+
+.travel-hero-actions {
+    padding-top: 28px;
+}
+
+.travel-container {
+    width: min(90%, 760px);
+    padding-top: 0;
+}
+
+.travel-block {
+    margin-bottom: 180px;
+}
+
+.travel-block:last-child {
+    margin-bottom: 0;
+}
+
+.travel-intro {
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+    opacity: 0.72;
+}
+
+.travel-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 42px auto 0;
+    max-width: 600px;
+    border-top: 1px solid rgba(0, 51, 102, 0.1);
+}
+
+.travel-bullets li {
+    padding: 18px 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+    font-size: 0.9rem;
+    line-height: 1.9;
+    opacity: 0.76;
+}
+
+.travel-feature-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 44px;
+}
+
+.travel-feature-card {
+    padding: 0 0 22px;
+    border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+}
+
+.travel-feature-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.travel-feature-title {
+    margin: 0 0 10px;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+.travel-feature-card p:last-child {
+    margin: 0;
+    opacity: 0.78;
+}
+
+.travel-syllabus {
+    list-style: none;
+    padding: 0;
+    margin: 52px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.travel-syllabus-item {
+    display: grid;
+    grid-template-columns: 74px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+    text-align: left;
+}
+
+.travel-session-number {
+    font-family: "Sawarabi Mincho", serif;
+    font-size: 2rem;
+    line-height: 1;
+    color: rgba(0, 51, 102, 0.28);
+}
+
+.travel-session-title {
+    margin: 0 0 8px;
+    font-family: "Sawarabi Mincho", serif;
+    font-size: 1.4rem;
+    line-height: 1.14;
+    color: var(--navy);
+}
+
+.travel-syllabus-item p:last-child {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.9;
+    opacity: 0.74;
+}
+
+.travel-offer-block {
+    margin-bottom: 120px;
+}
+
+.travel-offer-copy {
+    max-width: 620px;
+    margin: 0 auto 50px;
+}
+
+.travel-offer-copy p {
+    font-size: 0.92rem;
+    line-height: 1.95;
+    opacity: 0.76;
+}
+
+.offer-details {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.offer-details p {
+    margin: 0 0 0.45rem;
+    font-size: 0.88rem;
+    letter-spacing: 0.03em;
+    opacity: 0.78;
+}
+
+.travel-form-shell {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 38px clamp(22px, 4vw, 38px);
+    background: rgba(255, 255, 255, 0.54);
+    border: 1px solid rgba(0, 51, 102, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(15, 23, 32, 0.04);
+}
+
+.travel-form {
+    width: 100%;
+    max-width: none;
+    gap: 28px;
+}
+
+.travel-form-group {
+    width: 100%;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.travel-form-group .mono-input {
+    max-width: none;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: transparent;
+    color: #0f1720;
+}
+
+.travel-form-group select.mono-input {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.travel-textarea {
+    resize: vertical;
+    min-height: 160px;
+    border: 1px solid rgba(0, 51, 102, 0.14);
+    border-radius: 6px;
+    padding: 14px 16px;
+}
+
+.travel-textarea:focus {
+    border-color: var(--navy);
+}
+
+.travel-field-note {
+    margin: 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    opacity: 0.48;
+}
+
+.travel-checkbox-row {
+    width: 100%;
+    padding-top: 6px;
+}
+
+.travel-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+    font-size: 0.82rem;
+    line-height: 1.85;
+    opacity: 0.76;
+}
+
+.travel-checkbox-label input[type="checkbox"] {
+    margin-top: 0.32rem;
+    accent-color: var(--navy);
+}
+
+.travel-form-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 8px;
+}
+
+.travel-submit {
+    min-width: 210px;
+}
+
+.travel-submit-note {
+    margin: 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.4;
+}
+
+.travel-confirmation {
+    text-align: center;
+    animation: fadeUp 1s ease forwards;
+}
+
+.travel-confirmation-title {
+    margin-bottom: 24px;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+}
+
+.travel-confirmation-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.82;
+}
+
+.travel-inline-action {
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 51, 102, 0.4);
+    color: var(--navy);
+    font: inherit;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.travel-inline-action:hover {
+    border-bottom-color: var(--navy);
+}
+
+.travel-divider {
+    opacity: 0.35;
+}
+
+.travel-share-status {
+    min-height: 1.4em;
+    margin: 14px 0 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    opacity: 0.5;
+}
+
+.travel-hidden-footer {
+    padding: 120px 0 34px;
+    text-align: center;
+}
+
+.travel-hidden-footer p {
+    margin: 0;
+}
+
+.travel-hidden-link {
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    color: rgba(15, 23, 32, 0.26);
+    text-decoration: none;
+}
+
+.travel-hidden-link:hover {
+    color: rgba(15, 23, 32, 0.4);
+}
+
+@media (max-width: 768px) {
+    .travel-hero-inner {
+        width: min(100%, 640px);
+        min-height: calc(100svh - 76px);
+        padding-top: clamp(82px, 12vh, 100px);
+        padding-bottom: clamp(24px, 4vh, 36px);
+        transform: none;
+    }
+
+    .travel-hero-copy-block {
+        transform: translateY(-8px);
+    }
+
+    .travel-kicker {
+        margin-bottom: 20px;
+    }
+
+    .travel-hero-title {
+        margin-bottom: 18px;
+        font-size: clamp(3rem, 14vw, 4.4rem);
+    }
+
+    .travel-hero-subtitle {
+        margin-bottom: 26px;
+    }
+
+    .travel-hero-actions {
+        padding-top: 18px;
+    }
+
+    .travel-block {
+        margin-bottom: 120px;
+    }
+
+    .travel-syllabus-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .travel-session-number {
+        font-size: 1.5rem;
+    }
+
+    .travel-session-title {
+        font-size: 1.2rem;
+    }
+
+    .travel-form-shell {
+        padding: 28px 18px;
+    }
+
+    .travel-confirmation-actions {
+        flex-direction: column;
+    }
+
+    .travel-divider {
+        display: none;
+    }
+}
