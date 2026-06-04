@@ -1520,22 +1520,11 @@
     gap: 32px;
 }
 
-.travel-syllabus-item {
-    display: grid;
-    grid-template-columns: 74px minmax(0, 1fr);
-    gap: 20px;
-    align-items: start;
+.travel-syllabus .session {
     text-align: left;
 }
 
-.travel-session-number {
-    font-family: "Sawarabi Mincho", serif;
-    font-size: 2rem;
-    line-height: 1;
-    color: rgba(0, 51, 102, 0.28);
-}
-
-.travel-session-title {
+.travel-syllabus .session h3 {
     margin: 0 0 8px;
     font-family: "Sawarabi Mincho", serif;
     font-size: 1.4rem;
@@ -1543,7 +1532,7 @@
     color: var(--navy);
 }
 
-.travel-syllabus-item p:last-child {
+.travel-syllabus .session p {
     margin: 0;
     font-size: 0.88rem;
     line-height: 1.9;
@@ -1674,6 +1663,19 @@
     opacity: 0.4;
 }
 
+.travel-payment-note {
+    margin: 0;
+    max-width: 420px;
+    font-size: 0.78rem;
+    line-height: 1.8;
+    opacity: 0.72;
+    text-align: center;
+}
+
+.travel-payment-note span {
+    color: var(--crimson);
+}
+
 .travel-confirmation {
     text-align: center;
     animation: fadeUp 1s ease forwards;
@@ -1777,16 +1779,7 @@
         margin-bottom: 120px;
     }
 
-    .travel-syllabus-item {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .travel-session-number {
-        font-size: 1.5rem;
-    }
-
-    .travel-session-title {
+    .travel-syllabus .session h3 {
         font-size: 1.2rem;
     }
 
