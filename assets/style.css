@@ -57,13 +57,13 @@
      z-index: 0;
  }
 
-.hero-symbol-inline {
-    width: 1000px;
-    max-width: none;
-    height: auto;
-    opacity: 1;
-    /* 初期はフル表示 */
-}
+ .hero-symbol-inline {
+     width: 1000px;
+     max-width: none;
+     height: auto;
+     opacity: 1;
+     /* 初期はフル表示 */
+ }
 
  /* ===== H1（支配レイヤー） ===== */
  .hero-title-max {
@@ -431,6 +431,32 @@
      display: flex;
      justify-content: space-between;
      align-items: center;
+ }
+
+ .header-left {
+     margin-left: -8%;
+     margin-right: -2%;
+ }
+
+ .nav-combo {
+     margin-left: 5%;
+ }
+
+ .header-link-two-line {
+     display: inline-block;
+     max-width: 10.2rem;
+     white-space: normal;
+     word-break: keep-all;
+     overflow-wrap: break-word;
+     text-align: center;
+ }
+
+ .nav-default {
+     flex-wrap: nowrap;
+ }
+
+ .nav-default .header-link {
+     flex-shrink: 0;
  }
 
  /* ロゴ */
@@ -1092,96 +1118,96 @@
      opacity: 0.6;
  }
 
-.mono-policy-box .mono-strong {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    letter-spacing: 0.02em;
-}
+ .mono-policy-box .mono-strong {
+     font-size: 0.95rem;
+     line-height: 1.8;
+     letter-spacing: 0.02em;
+ }
 
-/* ===== DASHBOARD PAYMENT ACTION BLOCK ===== */
+ /* ===== DASHBOARD PAYMENT ACTION BLOCK ===== */
 
-.mono-payment-intro {
-    max-width: 640px;
-    font-size: 1rem;
-    letter-spacing: 0.01em;
-    opacity: 0.92;
-}
+ .mono-payment-intro {
+     max-width: 640px;
+     font-size: 1rem;
+     letter-spacing: 0.01em;
+     opacity: 0.92;
+ }
 
-.mono-payment-box {
-    width: 100%;
-    max-width: 640px;
-    margin: 8px auto 0;
-    padding: 1.3rem 1.4rem;
-    background: rgba(0, 0, 0, 0.02);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
+ .mono-payment-box {
+     width: 100%;
+     max-width: 640px;
+     margin: 8px auto 0;
+     padding: 1.3rem 1.4rem;
+     background: rgba(0, 0, 0, 0.02);
+     border: 1px solid rgba(0, 0, 0, 0.06);
+     border-radius: 6px;
+     display: flex;
+     flex-direction: column;
+     gap: 14px;
+ }
 
-.mono-payment-method {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-}
+ .mono-payment-method {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 8px;
+ }
 
-.mono-payment-label {
-    margin: 0;
-    font-size: 0.75rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    opacity: 0.55;
-}
+ .mono-payment-label {
+     margin: 0;
+     font-size: 0.75rem;
+     letter-spacing: 0.14em;
+     text-transform: uppercase;
+     opacity: 0.55;
+ }
 
-.mono-selectable {
-    margin: 0;
-    font-size: 1.2rem;
-    line-height: 1.4;
-    letter-spacing: 0.01em;
-    user-select: all;
-    cursor: pointer;
-}
+ .mono-selectable {
+     margin: 0;
+     font-size: 1.2rem;
+     line-height: 1.4;
+     letter-spacing: 0.01em;
+     user-select: all;
+     cursor: pointer;
+ }
 
-.mono-payment-divider {
-    width: 100%;
-    height: 1px;
-    background: rgba(0, 0, 0, 0.06);
-}
+ .mono-payment-divider {
+     width: 100%;
+     height: 1px;
+     background: rgba(0, 0, 0, 0.06);
+ }
 
-/* セッション注意ブロック */
-.session-note {
-    margin-top: 64px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-}
+ /* セッション注意ブロック */
+ .session-note {
+     margin-top: 64px;
+     padding-top: 24px;
+     border-top: 1px solid rgba(0, 0, 0, 0.06);
+ }
 
-/* 小さな導入 */
-.session-note-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.16em;
-    opacity: 0.45;
-    margin-bottom: 12px;
-}
+ /* 小さな導入 */
+ .session-note-eyebrow {
+     font-size: 0.7rem;
+     letter-spacing: 0.16em;
+     opacity: 0.45;
+     margin-bottom: 12px;
+ }
 
-/* 本文 */
-.session-note-body {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    letter-spacing: 0.02em;
-    margin-bottom: 6px;
-}
+ /* 本文 */
+ .session-note-body {
+     font-size: 0.95rem;
+     line-height: 1.6;
+     letter-spacing: 0.02em;
+     margin-bottom: 6px;
+ }
 
-/* Meet linkの行をほんのわずかに強調 */
-.session-note-body:first-of-type {
-    font-weight: 500;
-}
+ /* Meet linkの行をほんのわずかに強調 */
+ .session-note-body:first-of-type {
+     font-weight: 500;
+ }
 
 
-/* ===== MOBILE FIRST UX TUNING ===== */
-@media (max-width: 768px) {
+ /* ===== MOBILE FIRST UX TUNING ===== */
+ @media (max-width: 768px) {
 
      /* --- HERO TYPOGRAPHY --- */
      .hero-title-max {
@@ -1359,439 +1385,476 @@
      }
  }
 
-/* ===== JAPAN TRAVEL LP ===== */
-
-.travel-page {
-    margin: 0;
-    background: #fff;
-    color: #0f1720;
-    font-family: "Noto Sans JP", sans-serif;
-    scroll-behavior: smooth;
-}
-
-.travel-page main {
-    position: relative;
-}
-
-.travel-page strong {
-    font-weight: 700;
-    color: var(--navy);
-}
-
-.travel-page .section {
-    scroll-margin-top: 120px;
-}
-
-.travel-block {
-    scroll-margin-top: 120px;
-}
-
-.travel-hero {
-    min-height: 100svh;
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-.travel-hero-inner {
-    width: min(88%, 860px);
-    min-height: calc(100svh - 88px);
-    padding-top: clamp(92px, 12vh, 120px);
-    padding-bottom: clamp(40px, 6vh, 60px);
-    justify-content: space-between;
-    transform: none;
-}
-
-.travel-hero-copy-block {
-    width: 100%;
-    margin: auto 0;
-    transform: translateY(-10px);
-}
-
-.travel-kicker {
-    margin: 0 0 24px;
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    opacity: 0.45;
-}
-
-.travel-hero-title {
-    width: min(100%, 820px);
-    margin: 0 auto 20px;
-    font-size: clamp(4.4rem, 12vw, 8.8rem);
-    line-height: 0.9;
-}
-
-.travel-hero-subtitle {
-    width: min(100%, 720px);
-    margin: 0 auto 36px;
-    font-family: "Sawarabi Mincho", serif;
-    color: rgba(0, 51, 102, 0.86);
-    font-size: clamp(1.2rem, 2.4vw, 1.6rem);
-}
-
-.travel-hero-copy {
-    margin-bottom: 0;
-}
-
-.travel-hero-copy p {
-    font-size: 0.92rem;
-    letter-spacing: 0.04em;
-    opacity: 0.68;
-}
-
-.travel-hero-actions {
-    padding-top: 28px;
-}
-
-.travel-container {
-    width: min(90%, 760px);
-    padding-top: 0;
-}
-
-.travel-block {
-    margin-bottom: 180px;
-}
-
-.travel-block:last-child {
-    margin-bottom: 0;
-}
-
-.travel-intro {
-    max-width: 620px;
-    margin: 0 auto;
-    font-size: 0.92rem;
-    letter-spacing: 0.02em;
-    opacity: 0.72;
-}
-
-.travel-bullets {
-    list-style: none;
-    padding: 0;
-    margin: 42px auto 0;
-    max-width: 600px;
-    border-top: 1px solid rgba(0, 51, 102, 0.1);
-}
-
-.travel-bullets li {
-    padding: 18px 0;
-    margin: 0;
-    border-bottom: 1px solid rgba(0, 51, 102, 0.1);
-    font-size: 0.9rem;
-    line-height: 1.9;
-    opacity: 0.76;
-}
-
-.travel-feature-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 22px;
-    margin-top: 44px;
-}
-
-.travel-feature-card {
-    padding: 0 0 22px;
-    border-bottom: 1px solid rgba(0, 51, 102, 0.1);
-}
-
-.travel-feature-card:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.travel-feature-title {
-    margin: 0 0 10px;
-    font-size: 0.75rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    opacity: 0.5;
-}
-
-.travel-feature-card p:last-child {
-    margin: 0;
-    opacity: 0.78;
-}
-
-.travel-syllabus {
-    list-style: none;
-    padding: 0;
-    margin: 52px 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
-.travel-syllabus .session {
-    text-align: left;
-}
-
-.travel-syllabus .session h3 {
-    margin: 0 0 8px;
-    font-family: "Sawarabi Mincho", serif;
-    font-size: 1.4rem;
-    line-height: 1.14;
-    color: var(--navy);
-}
-
-.travel-syllabus .session p {
-    margin: 0;
-    font-size: 0.88rem;
-    line-height: 1.9;
-    opacity: 0.74;
-}
-
-.travel-offer-block {
-    margin-bottom: 120px;
-}
-
-.travel-offer-copy {
-    max-width: 620px;
-    margin: 0 auto 50px;
-}
-
-.travel-offer-copy p {
-    font-size: 0.92rem;
-    line-height: 1.95;
-    opacity: 0.76;
-}
-
-.offer-details {
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.offer-details p {
-    margin: 0 0 0.45rem;
-    font-size: 0.88rem;
-    letter-spacing: 0.03em;
-    opacity: 0.78;
-}
-
-.travel-form-shell {
-    width: 100%;
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 38px clamp(22px, 4vw, 38px);
-    background: rgba(255, 255, 255, 0.54);
-    border: 1px solid rgba(0, 51, 102, 0.08);
-    border-radius: 8px;
-    box-shadow: 0 20px 40px rgba(15, 23, 32, 0.04);
-}
-
-.travel-form {
-    width: 100%;
-    max-width: none;
-    gap: 28px;
-}
-
-.travel-form-group {
-    width: 100%;
-    align-items: flex-start;
-    gap: 8px;
-}
-
-.travel-form-group .mono-input {
-    max-width: none;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background: transparent;
-    color: #0f1720;
-}
-
-.travel-form-group select.mono-input {
-    appearance: none;
-    -webkit-appearance: none;
-    border-radius: 0;
-}
-
-.travel-textarea {
-    resize: vertical;
-    min-height: 160px;
-    border: 1px solid rgba(0, 51, 102, 0.14);
-    border-radius: 6px;
-    padding: 14px 16px;
-}
-
-.travel-textarea:focus {
-    border-color: var(--navy);
-}
-
-.travel-field-note {
-    margin: 0;
-    font-size: 0.72rem;
-    letter-spacing: 0.05em;
-    opacity: 0.48;
-}
-
-.travel-checkbox-row {
-    width: 100%;
-    padding-top: 6px;
-}
-
-.travel-checkbox-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    text-align: left;
-    font-size: 0.82rem;
-    line-height: 1.85;
-    opacity: 0.76;
-}
-
-.travel-checkbox-label input[type="checkbox"] {
-    margin-top: 0.32rem;
-    accent-color: var(--navy);
-}
-
-.travel-form-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding-top: 8px;
-}
-
-.travel-submit {
-    min-width: 210px;
-}
-
-.travel-submit-note {
-    margin: 0;
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0.4;
-}
-
-.travel-payment-note {
-    margin: 0;
-    max-width: 420px;
-    font-size: 0.78rem;
-    line-height: 1.8;
-    opacity: 0.72;
-    text-align: center;
-}
-
-.travel-payment-note span {
-    color: var(--crimson);
-}
-
-.travel-confirmation {
-    text-align: center;
-    animation: fadeUp 1s ease forwards;
-}
-
-.travel-confirmation-title {
-    margin-bottom: 24px;
-    font-size: clamp(1.7rem, 4vw, 2.4rem);
-}
-
-.travel-confirmation-actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 0;
-    font-size: 0.9rem;
-    opacity: 0.82;
-}
-
-.travel-inline-action {
-    padding: 0;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(0, 51, 102, 0.4);
-    color: var(--navy);
-    font: inherit;
-    letter-spacing: 0.03em;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.travel-inline-action:hover {
-    border-bottom-color: var(--navy);
-}
-
-.travel-divider {
-    opacity: 0.35;
-}
-
-.travel-share-status {
-    min-height: 1.4em;
-    margin: 14px 0 0;
-    font-size: 0.72rem;
-    letter-spacing: 0.05em;
-    opacity: 0.5;
-}
-
-.travel-hidden-footer {
-    padding: 120px 0 34px;
-    text-align: center;
-}
-
-.travel-hidden-footer p {
-    margin: 0;
-}
-
-.travel-hidden-link {
-    font-size: 0.66rem;
-    letter-spacing: 0.08em;
-    color: rgba(15, 23, 32, 0.26);
-    text-decoration: none;
-}
-
-.travel-hidden-link:hover {
-    color: rgba(15, 23, 32, 0.4);
-}
-
-@media (max-width: 768px) {
-    .travel-hero-inner {
-        width: min(100%, 640px);
-        min-height: calc(100svh - 76px);
-        padding-top: clamp(82px, 12vh, 100px);
-        padding-bottom: clamp(24px, 4vh, 36px);
-        transform: none;
-    }
-
-    .travel-hero-copy-block {
-        transform: translateY(-8px);
-    }
-
-    .travel-kicker {
-        margin-bottom: 20px;
-    }
-
-    .travel-hero-title {
-        margin-bottom: 18px;
-        font-size: clamp(3rem, 14vw, 4.4rem);
-    }
-
-    .travel-hero-subtitle {
-        margin-bottom: 26px;
-    }
-
-    .travel-hero-actions {
-        padding-top: 18px;
-    }
-
-    .travel-block {
-        margin-bottom: 120px;
-    }
-
-    .travel-syllabus .session h3 {
-        font-size: 1.2rem;
-    }
-
-    .travel-form-shell {
-        padding: 28px 18px;
-    }
-
-    .travel-confirmation-actions {
-        flex-direction: column;
-    }
-
-    .travel-divider {
-        display: none;
-    }
-}
+ /* ===== JAPAN TRAVEL LP ===== */
+
+ .travel-page {
+     margin: 0;
+     background: #fff;
+     color: #0f1720;
+     font-family: 'Source Han Sans', 'Noto Sans JP', sans-serif;
+     scroll-behavior: smooth;
+ }
+
+ .travel-page button,
+ .travel-page input,
+ .travel-page select,
+ .travel-page textarea {
+     font-family: 'Source Han Sans', 'Noto Sans JP', sans-serif;
+ }
+
+ .travel-page h1,
+ .travel-page h2,
+ .travel-page h3,
+ .travel-page .mono-heading,
+ .travel-page .serif-title,
+ .travel-page .hero-title-max,
+ .travel-page .hero-title-sub-central {
+     font-family: 'Sawarabi Mincho', 'Noto Serif JP', serif;
+ }
+
+ .travel-page header,
+ .travel-page .site-header,
+ .travel-page .site-header a,
+ .travel-page .site-header .header-link,
+ .travel-page .nav-link {
+     font-family: 'Source Han Sans', 'Noto Sans JP', sans-serif;
+ }
+
+ .travel-page main {
+     position: relative;
+ }
+
+ .travel-page strong {
+     font-weight: 700;
+     color: var(--navy);
+ }
+
+ .travel-page .section {
+     scroll-margin-top: 120px;
+ }
+
+ .travel-block {
+     scroll-margin-top: 120px;
+ }
+
+ .travel-hero {
+     min-height: 100svh;
+     padding-top: 0;
+     padding-bottom: 0;
+ }
+
+ .travel-hero-inner {
+     width: min(88%, 860px);
+     min-height: calc(100svh - 88px);
+     padding-top: clamp(92px, 12vh, 120px);
+     padding-bottom: clamp(40px, 6vh, 60px);
+     justify-content: space-between;
+     transform: none;
+ }
+
+ .travel-hero-copy-block {
+     width: 100%;
+     margin: auto 0;
+     transform: translateY(-10px);
+ }
+
+ .travel-kicker {
+     margin: 0 0 24px;
+     font-size: 0.72rem;
+     letter-spacing: 0.22em;
+     opacity: 0.45;
+ }
+
+ .travel-hero-title {
+     width: min(100%, 820px);
+     margin: 0 auto 20px;
+     font-size: clamp(4.4rem, 12vw, 8.8rem);
+     line-height: 0.9;
+ }
+
+ .travel-hero-subtitle {
+     width: min(100%, 720px);
+     margin: 0 auto 36px;
+     font-family: 'Sawarabi Mincho', 'Noto Serif JP', serif;
+     color: rgba(0, 51, 102, 0.86);
+     font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+ }
+
+ .travel-hero-copy {
+     margin-bottom: 0;
+ }
+
+ .travel-hero-copy p {
+     font-size: 0.92rem;
+     letter-spacing: 0.04em;
+     opacity: 0.68;
+ }
+
+ .travel-hero-actions {
+     padding-top: 28px;
+ }
+
+ .travel-container {
+     width: min(90%, 760px);
+     padding-top: 0;
+ }
+
+ .travel-block {
+     margin-bottom: 180px;
+ }
+
+ .travel-block:last-child {
+     margin-bottom: 0;
+ }
+
+ .travel-intro {
+     max-width: 620px;
+     margin: 0 auto;
+     font-size: 0.92rem;
+     letter-spacing: 0.02em;
+     opacity: 0.72;
+ }
+
+ .travel-bullets {
+     list-style: none;
+     padding: 0;
+     margin: 42px auto 0;
+     max-width: 600px;
+     border-top: 1px solid rgba(0, 51, 102, 0.1);
+ }
+
+ .travel-bullets li {
+     padding: 18px 0;
+     margin: 0;
+     border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+     font-size: 0.9rem;
+     line-height: 1.9;
+     opacity: 0.76;
+ }
+
+ .travel-feature-list {
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 22px;
+     margin-top: 44px;
+ }
+
+ .travel-feature-card {
+     padding: 0 0 22px;
+     border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+ }
+
+ .travel-feature-card:last-child {
+     border-bottom: none;
+     padding-bottom: 0;
+ }
+
+ .travel-feature-title {
+     margin: 0 0 10px;
+     font-size: 0.75rem;
+     letter-spacing: 0.16em;
+     text-transform: uppercase;
+     opacity: 0.5;
+ }
+
+ .travel-feature-card p:last-child {
+     margin: 0;
+     opacity: 0.78;
+ }
+
+ .travel-syllabus {
+     list-style: none;
+     padding: 0;
+     margin: 52px 0 0;
+     display: flex;
+     flex-direction: column;
+     gap: 32px;
+ }
+
+ .travel-syllabus .session {
+     text-align: left;
+ }
+
+ .travel-syllabus .session h3 {
+     margin: 0 0 8px;
+     font-family: 'Sawarabi Mincho', 'Noto Serif JP', serif;
+     font-size: 1.4rem;
+     line-height: 1.14;
+     color: var(--navy);
+ }
+
+ .travel-syllabus .session p {
+     margin: 0;
+     font-size: 0.88rem;
+     line-height: 1.9;
+     opacity: 0.74;
+ }
+
+ .travel-offer-block {
+     margin-bottom: 120px;
+ }
+
+ .travel-offer-copy {
+     max-width: 620px;
+     margin: 0 auto 50px;
+ }
+
+ .travel-offer-copy p {
+     font-size: 0.92rem;
+     line-height: 1.95;
+     opacity: 0.76;
+ }
+
+ .offer-details {
+     max-width: 520px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ .offer-details p {
+     margin: 0 0 0.45rem;
+     font-size: 0.88rem;
+     letter-spacing: 0.03em;
+     opacity: 0.78;
+ }
+
+ .travel-form-shell {
+     width: 100%;
+     max-width: 640px;
+     margin: 0 auto;
+     padding: 38px clamp(22px, 4vw, 38px);
+     background: rgba(255, 255, 255, 0.54);
+     border: 1px solid rgba(0, 51, 102, 0.08);
+     border-radius: 8px;
+     box-shadow: 0 20px 40px rgba(15, 23, 32, 0.04);
+ }
+
+ .travel-form {
+     width: 100%;
+     max-width: none;
+     gap: 28px;
+ }
+
+ .travel-form-group {
+     width: 100%;
+     align-items: flex-start;
+     gap: 8px;
+ }
+
+ .travel-form-group .mono-input {
+     max-width: none;
+     padding-top: 12px;
+     padding-bottom: 12px;
+     background: transparent;
+     color: #0f1720;
+ }
+
+ .travel-form-group select.mono-input {
+     appearance: none;
+     -webkit-appearance: none;
+     border-radius: 0;
+ }
+
+ .travel-textarea {
+     resize: vertical;
+     min-height: 160px;
+     border: 1px solid rgba(0, 51, 102, 0.14);
+     border-radius: 6px;
+     padding: 14px 16px;
+ }
+
+ .travel-textarea:focus {
+     border-color: var(--navy);
+ }
+
+ .travel-field-note {
+     margin: 0;
+     font-size: 0.72rem;
+     letter-spacing: 0.05em;
+     opacity: 0.48;
+ }
+
+ .travel-checkbox-row {
+     width: 100%;
+     padding-top: 6px;
+ }
+
+ .travel-checkbox-label {
+     display: flex;
+     align-items: flex-start;
+     gap: 12px;
+     text-align: left;
+     font-size: 0.82rem;
+     line-height: 1.85;
+     opacity: 0.76;
+ }
+
+ .travel-checkbox-label input[type="checkbox"] {
+     margin-top: 0.32rem;
+     accent-color: var(--navy);
+ }
+
+ .travel-inline-link {
+     color: inherit;
+     text-decoration: underline;
+     text-underline-offset: 0.16em;
+     text-decoration-thickness: 1px;
+ }
+
+ .travel-inline-link:hover,
+ .travel-inline-link:focus-visible {
+     opacity: 1;
+ }
+
+ .travel-form-actions {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 12px;
+     padding-top: 8px;
+ }
+
+ .travel-submit {
+     min-width: 210px;
+ }
+
+ .travel-submit-note {
+     margin: 0;
+     font-size: 0.72rem;
+     letter-spacing: 0.08em;
+     text-transform: uppercase;
+     opacity: 0.4;
+ }
+
+ .travel-payment-note {
+     margin: 0;
+     max-width: 420px;
+     font-size: 0.78rem;
+     line-height: 1.8;
+     opacity: 0.72;
+     text-align: center;
+ }
+
+ .travel-payment-note span {
+     color: var(--crimson);
+ }
+
+ .travel-confirmation {
+     text-align: center;
+     animation: fadeUp 1s ease forwards;
+ }
+
+ .travel-confirmation-title {
+     margin-bottom: 24px;
+     font-size: clamp(1.7rem, 4vw, 2.4rem);
+ }
+
+ .travel-confirmation-actions {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 10px;
+     margin: 0;
+     font-size: 0.9rem;
+     opacity: 0.82;
+ }
+
+ .travel-inline-action {
+     padding: 0;
+     background: transparent;
+     border: none;
+     border-bottom: 1px solid rgba(0, 51, 102, 0.4);
+     color: var(--navy);
+     font: inherit;
+     letter-spacing: 0.03em;
+     text-decoration: none;
+     cursor: pointer;
+ }
+
+ .travel-inline-action:hover {
+     border-bottom-color: var(--navy);
+ }
+
+ .travel-divider {
+     opacity: 0.35;
+ }
+
+ .travel-share-status {
+     min-height: 1.4em;
+     margin: 14px 0 0;
+     font-size: 0.72rem;
+     letter-spacing: 0.05em;
+     opacity: 0.5;
+ }
+
+ .travel-hidden-footer {
+     padding: 120px 0 34px;
+     text-align: center;
+ }
+
+ .travel-hidden-footer p {
+     margin: 0;
+ }
+
+ .travel-hidden-link {
+     font-size: 0.66rem;
+     letter-spacing: 0.08em;
+     color: rgba(15, 23, 32, 0.26);
+     text-decoration: none;
+ }
+
+ .travel-hidden-link:hover {
+     color: rgba(15, 23, 32, 0.4);
+ }
+
+ @media (max-width: 768px) {
+     .travel-hero-inner {
+         width: min(100%, 640px);
+         min-height: calc(100svh - 76px);
+         padding-top: clamp(82px, 12vh, 100px);
+         padding-bottom: clamp(24px, 4vh, 36px);
+         transform: none;
+     }
+
+     .travel-hero-copy-block {
+         transform: translateY(-8px);
+     }
+
+     .travel-kicker {
+         margin-bottom: 20px;
+     }
+
+     .travel-hero-title {
+         margin-bottom: 18px;
+         font-size: clamp(3rem, 14vw, 4.4rem);
+     }
+
+     .travel-hero-subtitle {
+         margin-bottom: 26px;
+     }
+
+     .travel-hero-actions {
+         padding-top: 18px;
+     }
+
+     .travel-block {
+         margin-bottom: 120px;
+     }
+
+     .travel-syllabus .session h3 {
+         font-size: 1.2rem;
+     }
+
+     .travel-form-shell {
+         padding: 28px 18px;
+     }
+
+     .travel-confirmation-actions {
+         flex-direction: column;
+     }
+
+     .travel-divider {
+         display: none;
+     }
+ }
