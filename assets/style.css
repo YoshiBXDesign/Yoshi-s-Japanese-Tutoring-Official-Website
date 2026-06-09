@@ -1368,6 +1368,14 @@
          text-align: left;
      }
 
+     .travel-page .nav-default .header-link,
+     .travel-page .nav-private .header-link {
+         font-family: 'Source Han Sans', 'Noto Sans JP', sans-serif;
+         font-size: 0.95rem;
+         font-weight: 400;
+         letter-spacing: 0.08em;
+     }
+
      .header-inner {
          gap: 12px;
          padding: 20px 6vw;
@@ -1387,38 +1395,58 @@
 
  /* ===== JAPAN TRAVEL LP ===== */
 
- .travel-page {
-     margin: 0;
-     background: #fff;
-     color: #0f1720;
-     font-family: 'Source Han Sans', 'Noto Sans JP', sans-serif;
-     scroll-behavior: smooth;
- }
+.travel-page {
+    margin: 0;
+    background: #fff;
+    color: #222222;
+    font-family: 'Source Han Sans', 'Noto Sans JP', sans-serif;
+    scroll-behavior: smooth;
+}
 
- .travel-page button,
- .travel-page input,
- .travel-page select,
- .travel-page textarea {
-     font-family: 'Source Han Sans', 'Noto Sans JP', sans-serif;
- }
+.travel-page button,
+.travel-page input,
+.travel-page select,
+.travel-page textarea {
+    font: inherit;
+    color: inherit;
+}
 
- .travel-page h1,
- .travel-page h2,
- .travel-page h3,
- .travel-page .mono-heading,
- .travel-page .serif-title,
- .travel-page .hero-title-max,
- .travel-page .hero-title-sub-central {
-     font-family: 'Sawarabi Mincho', 'Noto Serif JP', serif;
- }
+.travel-page .mono-btn {
+    color: #f7f4ee;
+}
 
- .travel-page header,
- .travel-page .site-header,
- .travel-page .site-header a,
- .travel-page .site-header .header-link,
- .travel-page .nav-link {
-     font-family: 'Source Han Sans', 'Noto Sans JP', sans-serif;
- }
+.travel-page h1,
+.travel-page h2,
+.travel-page h3,
+.travel-page .mono-heading,
+.travel-page .serif-title,
+.travel-page .hero-title-max,
+.travel-page .hero-title-sub-central,
+.travel-page .travel-syllabus .session h3 {
+    font-family: 'Sawarabi Mincho', 'Noto Serif JP', serif;
+    color: var(--navy);
+}
+
+.travel-page .site-header,
+.travel-page .site-header a,
+.travel-page .site-header .header-link,
+.travel-page .nav-link {
+    font-family: 'Source Han Sans', 'Noto Sans JP', sans-serif;
+}
+
+.travel-page .site-header .header-link {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+}
+
+.travel-page .sub-title {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #333333;
+}
 
  .travel-page main {
      position: relative;
@@ -1472,23 +1500,27 @@
      line-height: 0.9;
  }
 
- .travel-hero-subtitle {
+ .travel-page .hero-title-sub-central.travel-hero-subtitle {
      width: min(100%, 720px);
      margin: 0 auto 36px;
      font-family: 'Sawarabi Mincho', 'Noto Serif JP', serif;
-     color: rgba(0, 51, 102, 0.86);
+     color: var(--red);
      font-size: clamp(1.2rem, 2.4vw, 1.6rem);
  }
 
- .travel-hero-copy {
-     margin-bottom: 0;
- }
+.travel-hero-copy {
+    margin-bottom: 0;
+}
 
- .travel-hero-copy p {
-     font-size: 0.92rem;
-     letter-spacing: 0.04em;
-     opacity: 0.68;
- }
+.travel-hero-meta {
+    margin-top: 24px;
+}
+
+.travel-hero-copy p {
+    font-size: 0.92rem;
+    letter-spacing: 0.04em;
+    opacity: 0.68;
+}
 
  .travel-hero-actions {
      padding-top: 28px;
@@ -1590,25 +1622,41 @@
      opacity: 0.74;
  }
 
- .travel-offer-block {
-     margin-bottom: 120px;
- }
+.travel-offer-block {
+    margin-bottom: 120px;
+}
 
- .travel-offer-copy {
-     max-width: 620px;
-     margin: 0 auto 50px;
- }
+.travel-page .travel-offer-block h2:not(.is-visible),
+.travel-page .travel-offer-block h3:not(.is-visible),
+.travel-page .travel-offer-block .eyebrow:not(.is-visible),
+.travel-page .travel-offer-block p:not(.is-visible),
+.travel-page .travel-offer-block li:not(.is-visible),
+.travel-page .travel-offer-block .mono-stack>*:not(.is-visible),
+.travel-page .travel-offer-block .value-highlight:not(.is-visible) {
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto;
+}
 
- .travel-offer-copy p {
-     font-size: 0.92rem;
-     line-height: 1.95;
-     opacity: 0.76;
- }
+.travel-offer-copy {
+    max-width: 620px;
+    margin: 0 auto 50px;
+}
 
- .offer-details {
-     max-width: 520px;
-     margin-left: auto;
-     margin-right: auto;
+.travel-offer-copy p {
+    font-size: 0.92rem;
+    line-height: 1.95;
+    opacity: 0.76;
+}
+
+.travel-offer-checklist {
+    margin-top: 28px;
+}
+
+.offer-details {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
  }
 
  .offer-details p {
@@ -1618,22 +1666,33 @@
      opacity: 0.78;
  }
 
- .travel-form-shell {
-     width: 100%;
-     max-width: 640px;
-     margin: 0 auto;
-     padding: 38px clamp(22px, 4vw, 38px);
+.travel-form-shell {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 38px clamp(22px, 4vw, 38px);
      background: rgba(255, 255, 255, 0.54);
      border: 1px solid rgba(0, 51, 102, 0.08);
      border-radius: 8px;
-     box-shadow: 0 20px 40px rgba(15, 23, 32, 0.04);
- }
+    box-shadow: 0 20px 40px rgba(15, 23, 32, 0.04);
+}
 
- .travel-form {
-     width: 100%;
-     max-width: none;
-     gap: 28px;
- }
+.travel-form-lead {
+    margin: 0 0 18px;
+    font-size: 0.88rem;
+    line-height: 1.9;
+    opacity: 0.78;
+}
+
+.travel-form-closing {
+    margin-bottom: 30px;
+}
+
+.travel-form {
+    width: 100%;
+    max-width: none;
+    gap: 28px;
+}
 
  .travel-form-group {
      width: 100%;
@@ -1646,7 +1705,7 @@
      padding-top: 12px;
      padding-bottom: 12px;
      background: transparent;
-     color: #0f1720;
+     color: #222222;
  }
 
  .travel-form-group select.mono-input {
@@ -1736,7 +1795,7 @@
  }
 
  .travel-payment-note span {
-     color: var(--crimson);
+     color: var(--red);
  }
 
  .travel-confirmation {
@@ -1800,15 +1859,27 @@
  .travel-hidden-link {
      font-size: 0.66rem;
      letter-spacing: 0.08em;
-     color: rgba(15, 23, 32, 0.26);
+     color: rgba(0, 51, 102, 0.4);
      text-decoration: none;
  }
 
  .travel-hidden-link:hover {
-     color: rgba(15, 23, 32, 0.4);
+     color: rgba(0, 51, 102, 0.68);
  }
 
  @media (max-width: 768px) {
+     .travel-page .reveal h2:not(.is-visible),
+     .travel-page .reveal h3:not(.is-visible),
+     .travel-page .reveal .eyebrow:not(.is-visible),
+     .travel-page .reveal p:not(.is-visible),
+     .travel-page .reveal li:not(.is-visible),
+     .travel-page .reveal .mono-stack>*:not(.is-visible),
+     .travel-page .reveal .value-highlight:not(.is-visible) {
+         opacity: 1 !important;
+         transform: none !important;
+         will-change: auto;
+     }
+
      .travel-hero-inner {
          width: min(100%, 640px);
          min-height: calc(100svh - 76px);
