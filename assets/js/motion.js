@@ -24,7 +24,19 @@
     /* ===== SCROLL REVEAL ===== */
     function initScrollReveal() {
         const revealRoots = document.querySelectorAll(".reveal");
-        const blockSelector = [
+        const isTravelPage = document.body.classList.contains("travel-page");
+        const blockSelector = isTravelPage ? [
+            "p.reveal:not(.travel-hero-sequence-item)",
+            "li.reveal",
+            ".travel-block > .mono-heading-group",
+            ".travel-block > .travel-intro",
+            ".travel-block > .travel-bullets",
+            ".travel-feature-card",
+            ".travel-syllabus .session",
+            ".travel-offer-copy",
+            ".travel-form-shell",
+            ".travel-confirmation"
+        ].join(", ") : [
             ".mono-block",
             ".method-step",
             ".mono-block-action",
@@ -34,6 +46,8 @@
             ".value-card",
             ".feature-card"
         ].join(", ");
+        const headingSelector = "h2, h3, .eyebrow, .mono-eyebrow, .sub-title";
+        const bodySelector = "p, li, .mono-stack > *, .value-highlight";
         const targets = [];
 
         revealRoots.forEach((root) => {
@@ -53,14 +67,30 @@
                     const isMethodPage = document.body.classList.contains("method-page");
                     const revealRoot = block.closest(".reveal");
                     const baseDelay = 0;
+                    const isDirectReveal = block.matches("p.reveal, li.reveal");
 
-                    block.classList.add("is-visible");
-                    if (revealRoot) {
+                    if (revealRoot && revealRoot !== block) {
                         revealRoot.classList.add("is-visible");
                     }
 
-                    const headings = block.querySelectorAll("h2, h3, .eyebrow");
-                    const bodies = block.querySelectorAll("p, li, .mono-stack > *, .value-highlight");
+                    if (isDirectReveal) {
+                        const revealSiblings = block.parentElement
+                            ? Array.from(block.parentElement.children).filter((el) => el.matches("p.reveal, li.reveal"))
+                            : [block];
+                        const siblingDelay = Math.max(revealSiblings.indexOf(block), 0) * 110;
+
+                        setTimeout(() => {
+                            block.classList.add("is-visible");
+                        }, siblingDelay);
+
+                        observer.unobserve(block);
+                        return;
+                    }
+
+                    block.classList.add("is-visible");
+
+                    const headings = block.querySelectorAll(headingSelector);
+                    const bodies = block.querySelectorAll(bodySelector);
 
                     headings.forEach((h, i) => {
                         setTimeout(() => {
@@ -78,7 +108,8 @@
                 }
             });
         }, {
-            threshold: 0.45
+            threshold: isTravelPage ? 0.12 : 0.45,
+            rootMargin: isTravelPage ? "0px 0px -12% 0px" : "0px"
         });
 
         targets.forEach((target) => observer.observe(target));

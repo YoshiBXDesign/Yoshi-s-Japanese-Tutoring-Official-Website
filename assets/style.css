@@ -353,6 +353,10 @@
  .reveal h2:not(.is-visible),
  .reveal h3:not(.is-visible),
  .reveal .eyebrow:not(.is-visible),
+ .reveal .mono-eyebrow:not(.is-visible),
+ .reveal .sub-title:not(.is-visible),
+ p.reveal:not(.is-visible),
+ li.reveal:not(.is-visible),
  .reveal p:not(.is-visible),
  .reveal li:not(.is-visible),
  .reveal .mono-stack>*:not(.is-visible),
@@ -370,7 +374,9 @@
  /* headings: slower, earlier */
  .reveal h2.is-visible,
  .reveal h3.is-visible,
- .reveal .eyebrow.is-visible {
+ .reveal .eyebrow.is-visible,
+ .reveal .mono-eyebrow.is-visible,
+ .reveal .sub-title.is-visible {
      opacity: 1;
      transform: translateY(0);
      transition: opacity 1.2s cubic-bezier(0.2, 0, 0, 1),
@@ -380,6 +386,8 @@
  /* body: slightly later, same easing */
  .reveal p.is-visible,
  .reveal li.is-visible,
+ p.reveal.is-visible,
+ li.reveal.is-visible,
  .reveal .mono-stack>*.is-visible,
  .reveal .value-highlight.is-visible {
      opacity: 1;
@@ -398,6 +406,8 @@
 
      .reveal h2.is-visible,
      .reveal h3.is-visible,
+     .reveal .mono-eyebrow.is-visible,
+     .reveal .sub-title.is-visible,
      .reveal p.is-visible,
      .reveal li.is-visible,
      .reveal .mono-stack>*.is-visible {
@@ -1395,58 +1405,58 @@
 
  /* ===== JAPAN TRAVEL LP ===== */
 
-.travel-page {
-    margin: 0;
-    background: #fff;
-    color: #222222;
-    font-family: 'Source Han Sans', 'Noto Sans JP', sans-serif;
-    scroll-behavior: smooth;
-}
+ .travel-page {
+     margin: 0;
+     background: #fff;
+     color: #222222;
+     font-family: 'Source Han Sans', 'Noto Sans JP', sans-serif;
+     scroll-behavior: smooth;
+ }
 
-.travel-page button,
-.travel-page input,
-.travel-page select,
-.travel-page textarea {
-    font: inherit;
-    color: inherit;
-}
+ .travel-page button,
+ .travel-page input,
+ .travel-page select,
+ .travel-page textarea {
+     font: inherit;
+     color: inherit;
+ }
 
-.travel-page .mono-btn {
-    color: #f7f4ee;
-}
+ .travel-page .mono-btn {
+     color: #f7f4ee;
+ }
 
-.travel-page h1,
-.travel-page h2,
-.travel-page h3,
-.travel-page .mono-heading,
-.travel-page .serif-title,
-.travel-page .hero-title-max,
-.travel-page .hero-title-sub-central,
-.travel-page .travel-syllabus .session h3 {
-    font-family: 'Sawarabi Mincho', 'Noto Serif JP', serif;
-    color: var(--navy);
-}
+ .travel-page h1,
+ .travel-page h2,
+ .travel-page h3,
+ .travel-page .mono-heading,
+ .travel-page .serif-title,
+ .travel-page .hero-title-max,
+ .travel-page .hero-title-sub-central,
+ .travel-page .travel-syllabus .session h3 {
+     font-family: 'Sawarabi Mincho', 'Noto Serif JP', serif;
+     color: var(--navy);
+ }
 
-.travel-page .site-header,
-.travel-page .site-header a,
-.travel-page .site-header .header-link,
-.travel-page .nav-link {
-    font-family: 'Source Han Sans', 'Noto Sans JP', sans-serif;
-}
+ .travel-page .site-header,
+ .travel-page .site-header a,
+ .travel-page .site-header .header-link,
+ .travel-page .nav-link {
+     font-family: 'Source Han Sans', 'Noto Sans JP', sans-serif;
+ }
 
-.travel-page .site-header .header-link {
-    font-size: 0.8rem;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-}
+ .travel-page .site-header .header-link {
+     font-size: 0.8rem;
+     font-weight: 400;
+     letter-spacing: 0.06em;
+ }
 
-.travel-page .sub-title {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.9em;
-    font-style: italic;
-    color: #333333;
-}
+ .travel-page .sub-title {
+     display: block;
+     margin-bottom: 0.5rem;
+     font-size: 0.9em;
+     font-style: italic;
+     color: #333333;
+ }
 
  .travel-page main {
      position: relative;
@@ -1466,8 +1476,8 @@
  }
 
  .travel-hero {
-     min-height: 100svh;
-     padding-top: 0;
+     min-height: calc(100svh + 125px);
+     padding-top: 125px;
      padding-bottom: 0;
  }
 
@@ -1508,19 +1518,79 @@
      font-size: clamp(1.2rem, 2.4vw, 1.6rem);
  }
 
-.travel-hero-copy {
-    margin-bottom: 0;
-}
+ .travel-hero-copy {
+     margin-bottom: 0;
+ }
 
-.travel-hero-meta {
-    margin-top: 24px;
-}
+ .travel-hero-meta {
+     margin-top: 24px;
+ }
 
-.travel-hero-copy p {
-    font-size: 0.92rem;
-    letter-spacing: 0.04em;
-    opacity: 0.68;
-}
+ .travel-hero-copy p {
+     font-size: 0.92rem;
+     letter-spacing: 0.04em;
+     opacity: 0.68;
+ }
+
+ .travel-page .hero-description-central,
+ .travel-page .hero-cta-area-central {
+     opacity: 1;
+     transform: none;
+ }
+
+ .travel-page .hero-central.hero-loaded .hero-description-central,
+ .travel-page .hero-central.hero-loaded .hero-cta-area-central {
+     animation: none;
+ }
+
+ .travel-page .travel-hero-sequence-item {
+     opacity: 0;
+     transform: translateY(12px);
+     transition: opacity 1.2s cubic-bezier(0.2, 0, 0, 1),
+         transform 1.2s cubic-bezier(0.2, 0, 0, 1);
+     will-change: opacity, transform;
+ }
+
+ .travel-page .travel-hero-actions .travel-hero-sequence-item {
+     display: inline-block;
+ }
+
+ .travel-page .hero-central.hero-loaded .travel-hero-sequence-item {
+     opacity: 1;
+     transform: translateY(0);
+ }
+
+ .travel-page .hero-central.hero-loaded .travel-hero-order-1 {
+     transition-delay: 1.94s;
+ }
+
+ .travel-page .hero-central.hero-loaded .travel-hero-order-2 {
+     transition-delay: 2.06s;
+ }
+
+ .travel-page .hero-central.hero-loaded .travel-hero-order-3 {
+     transition-delay: 2.18s;
+ }
+
+ .travel-page .hero-central.hero-loaded .travel-hero-order-4 {
+     transition-delay: 2.3s;
+ }
+
+ .travel-page .hero-central.hero-loaded .travel-hero-order-5 {
+     transition-delay: 2.42s;
+ }
+
+ .travel-page .hero-central.hero-loaded .travel-hero-order-6 {
+     transition-delay: 2.54s;
+ }
+
+ .travel-page .hero-central.hero-loaded .travel-hero-order-7 {
+     transition-delay: 2.66s;
+ }
+
+ .travel-page .hero-central.hero-loaded .travel-hero-order-8 {
+     transition-delay: 2.9s;
+ }
 
  .travel-hero-actions {
      padding-top: 28px;
@@ -1622,41 +1692,29 @@
      opacity: 0.74;
  }
 
-.travel-offer-block {
-    margin-bottom: 120px;
-}
+ .travel-offer-block {
+     margin-bottom: 120px;
+ }
 
-.travel-page .travel-offer-block h2:not(.is-visible),
-.travel-page .travel-offer-block h3:not(.is-visible),
-.travel-page .travel-offer-block .eyebrow:not(.is-visible),
-.travel-page .travel-offer-block p:not(.is-visible),
-.travel-page .travel-offer-block li:not(.is-visible),
-.travel-page .travel-offer-block .mono-stack>*:not(.is-visible),
-.travel-page .travel-offer-block .value-highlight:not(.is-visible) {
-    opacity: 1 !important;
-    transform: none !important;
-    will-change: auto;
-}
+ .travel-offer-copy {
+     max-width: 620px;
+     margin: 0 auto 50px;
+ }
 
-.travel-offer-copy {
-    max-width: 620px;
-    margin: 0 auto 50px;
-}
+ .travel-offer-copy p {
+     font-size: 0.92rem;
+     line-height: 1.95;
+     opacity: 0.76;
+ }
 
-.travel-offer-copy p {
-    font-size: 0.92rem;
-    line-height: 1.95;
-    opacity: 0.76;
-}
+ .travel-offer-checklist {
+     margin-top: 28px;
+ }
 
-.travel-offer-checklist {
-    margin-top: 28px;
-}
-
-.offer-details {
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
+ .offer-details {
+     max-width: 520px;
+     margin-left: auto;
+     margin-right: auto;
  }
 
  .offer-details p {
@@ -1666,33 +1724,33 @@
      opacity: 0.78;
  }
 
-.travel-form-shell {
-    width: 100%;
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 38px clamp(22px, 4vw, 38px);
+ .travel-form-shell {
+     width: 100%;
+     max-width: 640px;
+     margin: 0 auto;
+     padding: 38px clamp(22px, 4vw, 38px);
      background: rgba(255, 255, 255, 0.54);
      border: 1px solid rgba(0, 51, 102, 0.08);
      border-radius: 8px;
-    box-shadow: 0 20px 40px rgba(15, 23, 32, 0.04);
-}
+     box-shadow: 0 20px 40px rgba(15, 23, 32, 0.04);
+ }
 
-.travel-form-lead {
-    margin: 0 0 18px;
-    font-size: 0.88rem;
-    line-height: 1.9;
-    opacity: 0.78;
-}
+ .travel-form-lead {
+     margin: 0 0 18px;
+     font-size: 0.88rem;
+     line-height: 1.9;
+     opacity: 0.78;
+ }
 
-.travel-form-closing {
-    margin-bottom: 30px;
-}
+ .travel-form-closing {
+     margin-bottom: 30px;
+ }
 
-.travel-form {
-    width: 100%;
-    max-width: none;
-    gap: 28px;
-}
+ .travel-form {
+     width: 100%;
+     max-width: none;
+     gap: 28px;
+ }
 
  .travel-form-group {
      width: 100%;
@@ -1867,17 +1925,18 @@
      color: rgba(0, 51, 102, 0.68);
  }
 
+ .travel-mobile-break {
+     display: none;
+ }
+
  @media (max-width: 768px) {
-     .travel-page .reveal h2:not(.is-visible),
-     .travel-page .reveal h3:not(.is-visible),
-     .travel-page .reveal .eyebrow:not(.is-visible),
-     .travel-page .reveal p:not(.is-visible),
-     .travel-page .reveal li:not(.is-visible),
-     .travel-page .reveal .mono-stack>*:not(.is-visible),
-     .travel-page .reveal .value-highlight:not(.is-visible) {
-         opacity: 1 !important;
-         transform: none !important;
-         will-change: auto;
+     .travel-mobile-break {
+         display: block;
+     }
+
+     .travel-hero {
+         min-height: calc(100svh + 115px);
+         padding-top: 115px;
      }
 
      .travel-hero-inner {
