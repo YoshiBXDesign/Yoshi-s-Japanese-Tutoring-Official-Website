@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JSZXJG6EQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0JSZXJG6EQ');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Japan Travel Confidence Intensive | Yoshi’s Japanese Tutoring</title>
@@ -66,7 +75,8 @@
                     </div>
                 </div>
                 <div class="hero-cta-area-central travel-hero-actions">
-                    <a href="#apply" class="cta-link-central travel-hero-sequence-item travel-hero-order-8">Apply for Batch 1 <span class="cta-arrow">→</span></a>
+                    <a href="#apply" class="cta-link-central travel-hero-sequence-item travel-hero-order-8"
+                        onclick="gtag('event', 'cta_click', { 'button_name': 'travel_apply_batch_1_hero' });">Apply for Batch 1 <span class="cta-arrow">→</span></a>
                 </div>
             </div>
         </section>
@@ -299,7 +309,8 @@
                             </div>
 
                             <div class="travel-form-actions">
-                                <button type="submit" class="mono-btn travel-submit">Submit Application</button>
+                                <button type="submit" class="mono-btn travel-submit"
+                                    onclick="gtag('event', 'cta_click', { 'button_name': 'travel_submit_application' });">Submit Application</button>
                                 <p class="travel-submit-note">No redirect. Your application stays on this page.</p>
                                 <p class="travel-payment-note">Upon acceptance, you will receive an email with
                                     instructions to secure your spot via <span>Cash App</span> or <span>Zelle</span>.

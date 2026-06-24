@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JSZXJG6EQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0JSZXJG6EQ');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Yoshi’s Japanese Tutoring</title>
@@ -96,7 +105,8 @@
 
             <!-- CTA -->
             <div>
-                <button type="submit" class="mono-btn">
+                <button type="submit" class="mono-btn"
+                    onclick="gtag('event', 'cta_click', { 'button_name': 'contact_submit_application' });">
                     Submit Application →
                 </button>
             </div>

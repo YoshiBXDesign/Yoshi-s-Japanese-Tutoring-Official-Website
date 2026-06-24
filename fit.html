@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JSZXJG6EQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0JSZXJG6EQ');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who It’s For | Yoshi’s Japanese Tutoring</title>
@@ -72,7 +81,8 @@
             <!-- Contact CTA -->
             <div class="mono-block mono-block-action" style="margin-top: 120px;">
                 <div class="mono-stack mono-stack-tight">
-                    <a href="/contact.html" class="mono-btn">
+                    <a href="/contact.html" class="mono-btn"
+                        onclick="gtag('event', 'cta_click', { 'button_name': 'fit_request_counseling' });">
                         Request Counseling →
                     </a>
                 </div>

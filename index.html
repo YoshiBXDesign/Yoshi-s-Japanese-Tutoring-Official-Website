@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JSZXJG6EQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0JSZXJG6EQ');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Executive Japanese Language Coaching | Yoshi’s Japanese Tutoring</title>
@@ -76,7 +85,8 @@
                 </div>
 
                 <div class="hero-cta-area-central">
-                    <a href="/contact.html" class="cta-link-central">
+                    <a href="/contact.html" class="cta-link-central"
+                        onclick="gtag('event', 'cta_click', { 'button_name': 'home_apply_for_enrollment_hero' });">
                         Apply for Enrollment <span class="cta-arrow">→</span>
                     </a>
                 </div>
@@ -187,7 +197,8 @@
                         either an invitation to a 30-minute consultation—or a clear explanation if this is not the right
                         fit.
                     </p>
-                    <a href="/contact.html" class="mono-btn" style="margin-top: 32px; display: inline-block;">
+                    <a href="/contact.html" class="mono-btn" style="margin-top: 32px; display: inline-block;"
+                        onclick="gtag('event', 'cta_click', { 'button_name': 'home_request_consideration_footer' });">
                         Request Consideration →
                     </a>
                 </div>

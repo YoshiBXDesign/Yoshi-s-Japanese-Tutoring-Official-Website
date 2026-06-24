@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JSZXJG6EQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-0JSZXJG6EQ');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Yoshi’s Japanese Tutoring</title>
@@ -36,7 +45,8 @@
                             you while payment is completed.</p>
                         <p class="mono-muted">* Please select only a time you are prepared to keep.</p>
                         <a href="https://cal.com/yoshi.nihongomaster/sessions" class="mono-btn" target="_blank"
-                            rel="noopener noreferrer">Open Calendar</a>
+                            rel="noopener noreferrer"
+                            onclick="gtag('event', 'cta_click', { 'button_name': 'dashboard_open_calendar' });">Open Calendar</a>
                     </div>
                 </div>
 
