@@ -1,6 +1,9 @@
  :root {
      --navy: #003366;
      --red: #D70000;
+     --cookie-bg: rgba(247, 246, 242, 0.96);
+     --cookie-border: rgba(0, 51, 102, 0.12);
+     --cookie-shadow: 0 -10px 30px rgba(15, 23, 42, 0.06);
  }
 
  html,
@@ -13,6 +16,110 @@
  *::before,
  *::after {
      box-sizing: border-box;
+ }
+
+ .cookie-consent {
+     position: fixed;
+     left: 24px;
+     right: 24px;
+     bottom: 24px;
+     z-index: 1200;
+     opacity: 0;
+     transform: translateY(10px);
+     transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+     pointer-events: none;
+ }
+
+ .cookie-consent.is-visible {
+     opacity: 1;
+     transform: translateY(0);
+     pointer-events: auto;
+ }
+
+ .cookie-consent.is-hidden {
+     opacity: 0;
+     transform: translateY(8px);
+     pointer-events: none;
+ }
+
+ .cookie-consent__inner {
+     width: min(100%, 1040px);
+     margin: 0 auto;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 24px;
+     padding: 16px 20px;
+     background: var(--cookie-bg);
+     border: 1px solid var(--cookie-border);
+     box-shadow: var(--cookie-shadow);
+     backdrop-filter: blur(10px);
+ }
+
+ .cookie-consent__text {
+     margin: 0;
+     color: rgba(0, 51, 102, 0.82);
+     font-size: 0.92rem;
+     line-height: 1.55;
+     letter-spacing: 0.01em;
+ }
+
+ .cookie-consent__actions {
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     gap: 12px;
+     flex-wrap: wrap;
+     flex-shrink: 0;
+ }
+
+ .cookie-consent__action {
+     appearance: none;
+     border: 1px solid var(--cookie-border);
+     background: transparent;
+     color: rgba(0, 51, 102, 0.84);
+     padding: 10px 14px;
+     min-width: 132px;
+     text-align: center;
+     text-decoration: none;
+     font: inherit;
+     font-size: 0.88rem;
+     letter-spacing: 0.06em;
+     cursor: pointer;
+     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+ }
+
+ .cookie-consent__action:hover,
+ .cookie-consent__action:focus-visible {
+     background: rgba(0, 51, 102, 0.04);
+     border-color: rgba(0, 51, 102, 0.2);
+     color: var(--navy);
+     outline: none;
+ }
+
+ @media (max-width: 720px) {
+     .cookie-consent {
+         left: 12px;
+         right: 12px;
+         bottom: 12px;
+     }
+
+     .cookie-consent__inner {
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 16px;
+         padding: 14px 16px;
+     }
+
+     .cookie-consent__actions {
+         width: 100%;
+         justify-content: flex-start;
+     }
+
+     .cookie-consent__action {
+         min-width: 0;
+         flex: 1 1 180px;
+     }
  }
 
  /***** HERO MONOLITH REBUILD *****/
