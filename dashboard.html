@@ -6,51 +6,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Yoshi’s Japanese Tutoring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Sawarabi+Mincho&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="icon" type="image/svg+xml" href="/assets/img/Symbol.svg">
 </head>
 
-<body>
+<body class="dashboard-page">
 
     <!-- Global Header -->
     <div id="global-header"></div>
 
-    <main>
+    <main class="dashboard-main">
 
-        <section class="mono-section reveal">
-            <div class="mono-container">
+        <section class="mono-section reveal dashboard-flow">
+            <div class="mono-container dashboard-container">
 
-                <!-- Welcome -->
-                <div class="mono-block mono-block-hero">
-                    <h1 class="mono-title">Your Practice Space</h1>
-                    <p class="mono-lead">A private environment for your ongoing work. All sessions, requests, and
-                        details are curated here.</p>
+                <div class="mono-block mono-block-hero dashboard-intro">
+                    <p class="mono-eyebrow dashboard-eyebrow">YOUR SESSIONS</p>
+                    <h1 class="mono-title dashboard-title">Plan Your Next Session.</h1>
+                    <p class="mono-lead dashboard-intro-body">Choose a time, complete payment, and wait for your
+                        confirmation email. Your session is confirmed when that email arrives.</p>
                 </div>
 
-                <div class="mono-block mono-block-action">
+                <div class="mono-block mono-block-action dashboard-step dashboard-step-one">
                     <div class="mono-heading-group">
                         <p class="mono-eyebrow">STEP 1</p>
-                        <h2 class="mono-heading">Reserve Your Time</h2>
+                        <h2 class="mono-heading">Choose Your Time.</h2>
                     </div>
-                    <div class="mono-stack">
-                        <p class="mono-note">Choose a time that genuinely works for your week. The slot will be held for
-                            you while payment is completed.</p>
-                        <p class="mono-muted">* Please select only a time you are prepared to keep.</p>
-                        <a href="https://cal.com/yoshi.nihongomaster/sessions" class="mono-btn" target="_blank"
+                    <div class="mono-stack dashboard-step-content">
+                        <p class="mono-note dashboard-body">Choose a time that works for your week. After you choose a
+                            time, it will be held temporarily while you complete payment.</p>
+                        <a href="https://cal.com/yoshi.nihongomaster/sessions"
+                            class="mono-btn dashboard-calendar-button" target="_blank"
                             rel="noopener noreferrer"
-                            onclick="gtag('event', 'cta_click', { 'button_name': 'dashboard_open_calendar' });">Open Calendar</a>
+                            onclick="gtag('event', 'cta_click', { 'button_name': 'dashboard_open_calendar' });"><span>Choose
+                                a Time</span><span class="dashboard-button-arrow" aria-hidden="true">→</span></a>
+                        <p class="mono-muted dashboard-helper">After choosing your time, return here to complete
+                            payment.</p>
                     </div>
                 </div>
 
-                <div class="mono-block mono-block-core">
+                <div class="mono-block mono-block-core dashboard-step dashboard-step-two">
                     <div class="mono-heading-group">
                         <p class="mono-eyebrow">STEP 2</p>
-                        <h2 class="mono-heading">Complete Payment</h2>
+                        <h2 class="mono-heading">Complete Payment.</h2>
                     </div>
-                    <div class="mono-stack">
-                        <p class="mono-note mono-payment-intro">Once your time has been requested, please complete
-                            payment promptly. Requested slots are held for one hour. If payment is not received within
-                            this window, the tentative hold will be released back to the calendar.</p>
+                    <div class="mono-stack dashboard-step-content">
+                        <div class="dashboard-body dashboard-payment-copy">
+                            <p class="mono-note mono-payment-intro">Your selected time is held for one hour. If payment
+                                is not received within that window, the hold is released and the time becomes available
+                                again.</p>
+                            <p class="mono-note">Payment is required before your session can be approved.</p>
+                        </div>
                         <div class="mono-payment-box">
                             <div class="mono-payment-method">
                                 <p class="mono-payment-label">Zelle</p>
@@ -62,33 +72,25 @@
                                 <p class="mono-selectable">$YoshinoriUeda</p>
                             </div>
                         </div>
-                        <p class="mono-note">Use whichever method is more natural for you. The result is the same.</p>
+                        <p class="mono-note dashboard-payment-helper">Use whichever payment method is most convenient
+                            for you.</p>
                     </div>
                 </div>
 
-                <div class="mono-block mono-block-core">
+                <div class="mono-block mono-block-core dashboard-step dashboard-step-three">
                     <div class="mono-heading-group">
                         <p class="mono-eyebrow">STEP 3</p>
-                        <h2 class="mono-heading">Your Session Is Secured</h2>
+                        <h2 class="mono-heading">Wait for Your Confirmation Email.</h2>
                     </div>
-                    <div class="mono-stack">
-                        <p class="mono-note">Once payment has been verified, Yoshi will approve your request and you
-                            will receive an automated confirmation email from the scheduling system.</p>
-                        <p class="mono-strong" style="margin: 12px 0;">This email will contain the Google Meet link
-                            for your session. Please keep it accessible and enter the room at your scheduled time.</p>
-                        <p class="mono-note">At that point, your reserved time becomes fully secured and no further
-                            action is required.</p>
-                        <div class="session-note">
-                            <p class="session-note-eyebrow">SESSION ACCESS</p>
-                            <p class="session-note-body">This email will contain the Google Meet link for your session.</p>
-                            <p class="session-note-body">Please keep it accessible and enter the room at your scheduled time.</p>
-                        </div>
-                        <div class="mono-policy-box">
-                            <p class="mono-eyebrow">PAYMENT POLICY</p>
-                            <p class="mono-strong">A reserved time becomes a confirmed session only after payment has
-                                been received.</p>
-                            <p class="mono-note">This keeps the calendar clear, fair, and reliable for both sides.</p>
-                        </div>
+                    <div class="mono-stack dashboard-step-content">
+                        <p class="mono-note dashboard-body">Once your selected time and payment have both been verified,
+                            Yoshi will approve your request. You will then receive a confirmation email from the
+                            scheduling system.</p>
+                        <p class="dashboard-confirmation">Your session is confirmed when you receive the confirmation
+                            email.</p>
+                        <p class="mono-note dashboard-body dashboard-meet-copy">The confirmation email will include your
+                            Google Meet link. Please keep it accessible and use it to enter your session at the scheduled
+                            time.</p>
                     </div>
                 </div>
 

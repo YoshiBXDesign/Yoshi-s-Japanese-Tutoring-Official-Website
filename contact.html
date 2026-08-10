@@ -5,8 +5,12 @@
     <script src="/assets/js/consent.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Yoshi’s Japanese Tutoring</title>
+    <title>Consultation Request | Yoshi’s Japanese Tutoring</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Sawarabi+Mincho&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="icon" type="image/svg+xml" href="assets/img/Symbol.svg">
 </head>
@@ -17,94 +21,108 @@
     <div id="global-header"></div>
 
     <!-- Main -->
-    <main class="section mono-stack reveal">
+    <main class="contact-main">
+        <header class="contact-intro">
+            <span class="contact-eyebrow">CONSULTATION REQUEST</span>
+            <h1 class="contact-title">Before We Speak.</h1>
+            <div class="contact-intro-body">
+                <p>I work one to one with each student, and I read every request myself. Your answers help me understand
+                    where you are now, what you need Japanese for, and how to make the most of our first conversation.</p>
+                <p>After reading your request, I’ll follow up personally. If a consultation looks like the right next
+                    step, I’ll include available times.</p>
+            </div>
+        </header>
 
-        <h1 class="section-title">Application</h1>
-
-        <p class="mono-lead" style="max-width: 640px;">
-            This service is designed for a small number of students at a time. To decide whether we are a genuine match,
-            I read every initial message carefully before suggesting any next steps.
-        </p>
-
-        <form action="https://formspree.io/f/maqlogab" method="POST" class="mono-stack"
-            style="max-width: 640px; width: 100%;">
+        <form action="https://formspree.io/f/maqlogab" method="POST" class="mono-stack contact-form">
 
             <!-- Group 1: Profile -->
-            <div class="mono-block">
-                <p class="mono-subtitle">Profile</p>
-                <div class="mono-stack">
+            <section class="mono-block contact-form-section" aria-labelledby="contact-profile-heading">
+                <h2 class="contact-section-eyebrow" id="contact-profile-heading">PROFILE</h2>
+                <div class="contact-fields">
+                    <div class="contact-field-group">
+                        <label class="mono-label contact-label" for="contact-name">Full Name</label>
+                        <input type="text" id="contact-name" name="name" class="mono-input contact-field"
+                            placeholder="Full Name" required>
+                    </div>
 
-                    <label class="mono-label">Full Name</label>
-                    <input type="text" name="name" class="mono-input" placeholder="Full Name" required>
+                    <div class="contact-field-group">
+                        <label class="mono-label contact-label" for="contact-email">Email Address</label>
+                        <input type="email" id="contact-email" name="email" class="mono-input contact-field"
+                            placeholder="Email Address" required>
+                    </div>
 
-                    <label class="mono-label">Email Address</label>
-                    <input type="email" name="email" class="mono-input" placeholder="Email Address" required>
-
-                    <label class="mono-label">Current location and time zone</label>
-                    <input type="text" name="location_and_timezone" class="mono-input"
-                        placeholder="Current location and time zone" required>
-
+                    <div class="contact-field-group">
+                        <label class="mono-label contact-label" for="contact-location">Current location and time
+                            zone</label>
+                        <input type="text" id="contact-location" name="location_and_timezone"
+                            class="mono-input contact-field" placeholder="Current location and time zone" required>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- Group 2: Current Status -->
-            <div class="mono-block">
-                <p class="mono-subtitle">Current Status</p>
-                <div class="mono-stack">
+            <!-- Group 2: Current Japanese -->
+            <section class="mono-block contact-form-section" aria-labelledby="contact-japanese-heading">
+                <h2 class="contact-section-eyebrow" id="contact-japanese-heading">YOUR JAPANESE NOW</h2>
+                <div class="contact-fields">
+                    <div class="contact-field-group">
+                        <label class="mono-label contact-label" for="contact-level">How would you describe your current
+                            Japanese level, in your own words?</label>
+                        <textarea id="contact-level" name="current_japanese_level" class="mono-input contact-field"
+                            rows="4"
+                            placeholder="e.g., Self-studied for 6 months; I know basic greetings but struggle to build sentences."
+                            required></textarea>
+                    </div>
 
-                    <label class="mono-label">Your current Japanese level (in your own words)</label>
-                    <textarea name="current_japanese_level" class="mono-input" rows="4"
-                        placeholder="e.g., Self-studied for 6 months; I know basic greetings but struggle to build sentences."
-                        required></textarea>
-
-                    <label class="mono-label">Can you read and write all Hiragana and Katakana?</label>
-                    <select name="hiragana_katakana" class="mono-input" required>
-                        <option value="">Select an option</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                        <option value="learning">Still learning</option>
-                    </select>
-
+                    <div class="contact-field-group">
+                        <label class="mono-label contact-label" for="contact-kana">Can you read and write hiragana and
+                            katakana?</label>
+                        <div class="contact-select-wrap">
+                            <select id="contact-kana" name="hiragana_katakana" class="mono-input contact-field" required>
+                                <option value="">Select an option</option>
+                                <option value="yes_comfortably">Yes, comfortably</option>
+                                <option value="read_not_write">I can read them, but writing is still difficult</option>
+                                <option value="some_not_all">I know some, but not all</option>
+                                <option value="not_yet">Not yet</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- Group 3: Goals & Vision -->
-            <div class="mono-block">
-                <p class="mono-subtitle">Goals & Vision</p>
-                <div class="mono-stack">
+            <!-- Group 3: Purpose -->
+            <section class="mono-block contact-form-section" aria-labelledby="contact-purpose-heading">
+                <h2 class="contact-section-eyebrow" id="contact-purpose-heading">PURPOSE &amp; DIRECTION</h2>
+                <div class="contact-fields">
+                    <div class="contact-field-group">
+                        <label class="mono-label contact-label" for="contact-purpose">Why do you need Japanese right
+                            now?</label>
+                        <textarea id="contact-purpose" name="why_japanese_now" class="mono-input contact-field" rows="4"
+                            placeholder="e.g., Relocating to the Tokyo office next spring and need to communicate directly with local teams."
+                            required></textarea>
+                    </div>
 
-                    <label class="mono-label">Why do you need Japanese now?</label>
-                    <textarea name="why_japanese_now" class="mono-input" rows="4"
-                        placeholder="e.g., Relocating to the Tokyo office next spring and need to communicate directly with local teams."
-                        required></textarea>
-
-                    <label class="mono-label">What do you hope will be different 12–18 months from today?</label>
-                    <textarea name="vision_12_18_months" class="mono-input" rows="4"
-                        placeholder="e.g., Able to handle 1:1 lunch conversations in Japanese without an interpreter."
-                        required></textarea>
-
+                    <div class="contact-field-group">
+                        <label class="mono-label contact-label" for="contact-direction">What would you like to be able to
+                            do in Japanese 12–18 months from now?</label>
+                        <textarea id="contact-direction" name="vision_12_18_months" class="mono-input contact-field"
+                            rows="4"
+                            placeholder="e.g., Handle one-on-one conversations in Japanese without an interpreter."
+                            required></textarea>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Agreement -->
-            <div class="mono-stack">
-                <label class="mono-note" style="display: flex; gap: 8px; align-items: flex-start;">
-                    <input type="checkbox" name="understanding_agreement" required>
-                    <span>I understand that this is a selective program, and submitting this form does not guarantee
-                        admission.</span>
-                </label>
-            </div>
+            </section>
 
             <!-- CTA -->
-            <div>
-                <button type="submit" class="mono-btn"
+            <div class="contact-form-action">
+                <button type="submit" class="mono-btn contact-submit"
                     onclick="gtag('event', 'cta_click', { 'button_name': 'contact_submit_application' });">
-                    Submit Application →
+                    <span>Send My Request</span><span class="contact-submit-arrow" aria-hidden="true">→</span>
                 </button>
             </div>
 
         </form>
 
+        <div class="contact-footer-boundary" aria-hidden="true"></div>
     </main>
 
     <!-- Global Footer -->

@@ -6,67 +6,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Yoshi’s Japanese Tutoring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Sawarabi+Mincho&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="icon" type="image/svg+xml" href="/assets/img/Symbol.svg">
-    <style>
-        .login-wrapper {
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center
-        }
-
-        .login-form,
-        .login-result {
-            max-width: 520px;
-            margin: 0 auto
-        }
-
-        .login-status {
-            font-size: 1rem;
-            letter-spacing: .08em;
-            opacity: .85
-        }
-    </style>
 </head>
 
-<body>
+<body class="login-page">
 
     <!-- Global Header -->
     <div id="global-header"></div>
 
-    <main>
+    <main class="login-main">
 
         <section class="mono-section">
             <div class="mono-container">
                 <div class="login-wrapper">
 
                     <div class="login-form" id="login-form">
-                        <h1 class="mono-title">Private Student Access</h1>
+                        <span class="login-eyebrow">CURRENT STUDENTS</span>
+                        <h1 class="mono-title login-title">Your Student Access.</h1>
 
-                        <p class="mono-lead">
-                            Reserved for current students of Yoshi’s Japanese Tutoring. Please sign in to access your
-                            schedule and materials.
+                        <p class="mono-lead login-body">
+                            This area is for current students of Yoshi’s Japanese Tutoring. Enter your access code to
+                            view your schedule and lesson materials.
                         </p>
 
-                        <div class="mono-stack">
-                            <input type="password" id="access-code" class="mono-input" placeholder="Enter Access Code"
-                                style="margin-bottom: 24px;">
+                        <div class="mono-stack login-fields">
+                            <div class="login-access-group">
+                                <label class="login-access-label" for="access-code">Access Code</label>
+                                <input type="password" id="access-code" class="mono-input"
+                                    placeholder="Enter your access code">
+                            </div>
                             <p id="error-message" class="mono-note"
                                 style="display:none; opacity:0; margin-bottom:16px;">
-                                Incorrect access code. Please contact Yoshi.
+                                That code didn't match our records. Please check it and try again, or contact Yoshi if
+                                you're still having trouble.
                             </p>
-                            <p>
-                                <button id="login-action" class="mono-btn" type="button"
+                            <p class="login-actions">
+                                <button id="login-action" class="mono-btn login-submit" type="button"
                                     onclick="gtag('event', 'cta_click', { 'button_name': 'login_enter' });">
-                                    Enter →
+                                    <span>Sign In</span><span class="login-submit-arrow" aria-hidden="true">→</span>
                                 </button>
                             </p>
                         </div>
-                        <p class="mono-note">
-                            If you were invited but cannot sign in, please contact Yoshi directly.
+                        <p class="mono-note login-help">
+                            Having trouble accessing your student area? Contact Yoshi directly.
                         </p>
                     </div>
 
