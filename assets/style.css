@@ -12,10 +12,26 @@
      width: 100%;
  }
 
+ body {
+     margin: 0;
+ }
+
  *,
  *::before,
  *::after {
      box-sizing: border-box;
+ }
+
+ .visually-hidden {
+     position: absolute !important;
+     width: 1px !important;
+     height: 1px !important;
+     padding: 0 !important;
+     margin: -1px !important;
+     overflow: hidden !important;
+     clip: rect(0, 0, 0, 0) !important;
+     white-space: nowrap !important;
+     border: 0 !important;
  }
 
  .cookie-consent {
@@ -241,6 +257,7 @@
 
  /* Add initial state for animation */
  .hero-title-max,
+ .hero-copy-image,
  .hero-title-sub-central,
  .hero-description-central,
  .hero-cta-area-central {
@@ -263,6 +280,12 @@
  /* ===== HERO MOTION (FIXED) ===== */
 
  .hero-central.hero-loaded .hero-title-max {
+     animation: fadeScale 2.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+     animation-delay: 0.8s;
+     will-change: opacity, transform;
+ }
+
+ .hero-central.hero-loaded .hero-copy-image {
      animation: fadeScale 2.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
      animation-delay: 0.8s;
      will-change: opacity, transform;
@@ -843,6 +866,500 @@
 
  .mono-block .mono-link:hover {
      opacity: 1;
+ }
+
+ /* ===== HOME EDITORIAL FLOW ===== */
+
+ .home-page .hero-title-sub-central {
+     margin-bottom: 42px;
+ }
+
+ /* Keep the complete hero copy cluster optically centered within the stationary symbol. */
+ .home-page .hero-copy-cluster {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     transform: translateY(30px);
+ }
+
+ .home-page .hero-copy-image {
+     display: block;
+     width: min(82vw, 560px);
+     max-width: 100%;
+     height: auto;
+     margin: 0 auto 8px;
+     position: relative;
+     z-index: 2;
+ }
+
+ .home-page .hero-title-sub-central {
+     width: min(100%, 620px);
+     font-size: clamp(1rem, 2.2vw, 1.4rem);
+     line-height: 1.35;
+     text-wrap: balance;
+ }
+
+ .home-page .hero-description-central {
+     width: min(100%, 600px);
+     margin-bottom: 48px;
+ }
+
+ .home-page .hero-description-central p {
+     max-width: 600px;
+     margin-left: auto;
+     margin-right: auto;
+     text-wrap: balance;
+ }
+
+ .home-page .hero-description-central p,
+ .home-page .mono-stack p,
+ .home-page .mono-stack ul li {
+     font-size: 0.92rem;
+     line-height: 1.9;
+     font-weight: 400;
+ }
+
+ .home-page .mono-stack p,
+ .home-page .mono-stack ul li {
+     opacity: 0.72;
+ }
+
+ .home-page .mono-block:not(.home-reviews) > p {
+     width: min(100%, 580px);
+ }
+
+ .home-page .section {
+     padding-top: 10.5vh;
+     padding-bottom: 10.5vh;
+ }
+
+ .home-page .hero-central + .section {
+     padding-top: 3vh;
+     padding-bottom: 8.4vh;
+ }
+
+ .home-page .mono-block {
+     margin-bottom: 105px;
+ }
+
+ .home-page .mono-heading-group {
+     margin-bottom: 30px;
+ }
+
+ .home-page .mono-subtitle-strong {
+     margin-bottom: 28px;
+ }
+
+ .home-page .tutor-introduction {
+     margin-top: 0;
+     font-family: "Sawarabi Mincho", serif;
+     font-size: 1rem;
+     letter-spacing: 0.03em;
+     opacity: 0.78;
+ }
+
+ .home-page .review-grid {
+     display: grid;
+     grid-template-columns: repeat(3, minmax(0, 1fr));
+     align-items: stretch;
+     width: min(100%, 980px);
+     max-width: none;
+     margin: 0 auto;
+     border-top: 1px solid rgba(0, 51, 102, 0.16);
+     border-bottom: 1px solid rgba(0, 51, 102, 0.16);
+     text-align: left;
+ }
+
+ .home-page .home-reviews {
+     max-width: 980px;
+ }
+
+ .home-page .review-entry {
+     display: flex;
+     flex-direction: column;
+     min-width: 0;
+     padding: 36px 28px 34px;
+ }
+
+ .home-page .review-entry + .review-entry {
+     border-left: 1px solid rgba(0, 51, 102, 0.16);
+ }
+
+ .home-page .review-text {
+     margin: 0;
+     color: var(--navy);
+     opacity: 0.72;
+     overflow-wrap: break-word;
+ }
+
+ .home-page .review-attribution {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     margin-top: 28px;
+ }
+
+ .home-page .review-attribution cite {
+     font-family: "Sawarabi Mincho", serif;
+     font-size: 1.05rem;
+     font-style: normal;
+     color: var(--navy);
+ }
+
+ .home-page .review-source {
+     margin-top: 5px;
+     color: rgba(0, 51, 102, 0.46);
+     font-size: 0.68rem;
+     letter-spacing: 0.08em;
+ }
+
+ .home-page .quiet-text-link {
+     display: inline-block;
+     margin-top: 20px;
+     padding-bottom: 2px;
+     color: rgba(0, 51, 102, 0.72);
+     font-size: 0.78rem;
+     letter-spacing: 0.06em;
+     text-decoration: none;
+     border-bottom: 1px solid rgba(0, 51, 102, 0.28);
+     transition: color 220ms ease, border-color 220ms ease;
+ }
+
+ .home-page .quiet-text-link:hover,
+ .home-page .quiet-text-link:focus-visible {
+     color: var(--navy);
+     border-color: var(--navy);
+     outline: none;
+ }
+
+ .home-page .reviews-facebook-exit {
+     width: min(100%, 620px);
+     margin: 42px auto 0;
+     text-align: center;
+ }
+
+ .home-page .reviews-facebook-link {
+     margin-top: 0;
+     color: rgba(0, 51, 102, 0.62);
+     font-size: 0.74rem;
+     border-color: rgba(0, 51, 102, 0.22);
+ }
+
+ .home-page .home-fees,
+ .home-page .home-faq {
+     max-width: 720px;
+ }
+
+ .home-page .fee-details {
+     width: min(100%, 560px);
+     margin: 0 auto;
+     text-align: center;
+ }
+
+ .home-page .fee-format {
+     margin-bottom: 10px;
+     color: var(--navy);
+     opacity: 0.78;
+     letter-spacing: 0.08em;
+ }
+
+ .home-page .fee-amount {
+     margin: 0;
+     font-family: "Sawarabi Mincho", serif;
+     font-size: clamp(2.1rem, 5vw, 3rem);
+     line-height: 1.15;
+     letter-spacing: -0.035em;
+     color: var(--navy);
+     opacity: 1;
+ }
+
+ .home-page .fee-amount span {
+     font-family: "Noto Sans JP", sans-serif;
+     font-size: 0.82rem;
+     letter-spacing: 0.08em;
+     opacity: 0.58;
+ }
+
+ .home-page .fee-note {
+     max-width: 540px;
+     margin-top: 36px;
+ }
+
+ .home-page .home-faq-list {
+     width: min(100%, 640px);
+     margin: 0 auto;
+     text-align: left;
+     border-top: 1px solid rgba(0, 51, 102, 0.16);
+     border-bottom: 1px solid rgba(0, 51, 102, 0.16);
+ }
+
+ .home-page .home-faq-item summary {
+     position: relative;
+     padding: 24px 38px 24px 0;
+     color: var(--navy);
+     font-family: "Sawarabi Mincho", serif;
+     font-size: 1.05rem;
+     line-height: 1.45;
+     list-style: none;
+     cursor: pointer;
+ }
+
+ .home-page .home-faq-item summary::-webkit-details-marker {
+     display: none;
+ }
+
+ .home-page .home-faq-item summary::after {
+     content: "+";
+     position: absolute;
+     top: 24px;
+     right: 0;
+     font-family: "Noto Sans JP", sans-serif;
+     font-size: 0.95rem;
+     opacity: 0.5;
+ }
+
+ .home-page .home-faq-item[open] summary::after {
+     content: "−";
+ }
+
+ .home-page .faq-marker {
+     margin-right: 0.3em;
+     font-family: "Noto Sans JP", sans-serif;
+     font-size: 0.72em;
+     letter-spacing: 0.08em;
+     opacity: 0.5;
+ }
+
+ .home-page .home-faq-answer {
+     padding: 0 38px 26px 0;
+ }
+
+ /* FAQ copy must never inherit a hidden scroll-reveal state. */
+ .home-page .reveal .home-faq-answer,
+ .home-page .reveal .home-faq-answer p,
+ .home-page .reveal .home-faq-answer p:not(.is-visible) {
+     opacity: 1 !important;
+     transform: none !important;
+     visibility: visible !important;
+     will-change: auto !important;
+ }
+
+ .home-page .home-faq-answer p {
+     margin: 0;
+     opacity: 0.68 !important;
+ }
+
+ .home-page .home-final-cta {
+     max-width: 760px;
+     margin-bottom: 0;
+     text-align: center;
+ }
+
+ .home-page .home-final-heading-group {
+     margin-bottom: 34px;
+ }
+
+ .home-page .home-final-eyebrow {
+     margin-bottom: 16px;
+     font-size: 0.68rem;
+     letter-spacing: 0.2em;
+     opacity: 0.42;
+ }
+
+ .home-page .mono-stack .home-final-headline {
+     max-width: 760px;
+     margin: 0 auto;
+     font-size: clamp(2.75rem, 6vw, 4.25rem);
+     line-height: 1.04;
+     letter-spacing: -0.045em;
+     text-wrap: balance;
+ }
+
+ .home-page .home-final-cta p.final-cta-body {
+     width: min(100%, 600px);
+     max-width: 600px;
+     margin: 0 auto;
+     color: var(--navy);
+     font-size: 0.92rem;
+     font-weight: 400;
+     line-height: 1.9;
+     letter-spacing: 0.025em;
+     opacity: 0.68;
+     text-wrap: balance;
+ }
+
+ .home-page .home-final-action-group {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-top: 42px;
+ }
+
+ /* A quiet action plane: no fill, only neutral hairlines and measured motion. */
+ .home-page .home-final-action {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     padding: 16px 12px;
+     background: transparent;
+     color: var(--navy);
+     border: 0;
+     border-top: 1px solid rgba(15, 23, 42, 0.18);
+     border-bottom: 1px solid rgba(15, 23, 42, 0.18);
+     border-radius: 0;
+     font-size: 0.86rem;
+     font-weight: 500;
+     letter-spacing: 0.08em;
+     opacity: 0.78;
+     box-shadow: none;
+     text-decoration: none;
+     transition: letter-spacing 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+         opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+         border-color 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+
+ .home-page .home-final-action:hover,
+ .home-page .home-final-action:focus-visible {
+     border-color: rgba(15, 23, 42, 0.42);
+     letter-spacing: 0.115em;
+     opacity: 1;
+ }
+
+ .home-page .home-final-action:focus-visible {
+     outline: 1px solid rgba(15, 23, 42, 0.32);
+     outline-offset: 6px;
+ }
+
+ .home-page .home-final-arrow {
+     display: inline-block;
+     transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+         opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+
+ .home-page .home-final-action:hover .home-final-arrow,
+ .home-page .home-final-action:focus-visible .home-final-arrow {
+     transform: translateX(4px);
+     opacity: 1;
+ }
+
+ .home-page .home-final-action-group p.home-final-meta {
+     margin: 11px 0 0;
+     color: rgba(15, 23, 42, 0.48);
+     font-size: 0.66rem;
+     line-height: 1.4;
+     letter-spacing: 0.1em;
+     opacity: 1;
+ }
+
+ .home-page .home-footer-boundary {
+     width: min(100%, 720px);
+     max-width: 720px;
+     height: 1px;
+     margin-top: max(12vh, 96px);
+     margin-bottom: max(12vh, 96px);
+     background: rgba(15, 23, 42, 0.1);
+ }
+
+ @media (max-width: 768px) {
+     .home-page .section {
+         padding-top: 3.25rem;
+         padding-bottom: 3.25rem;
+     }
+
+     .home-page .hero-central {
+         padding-left: clamp(18px, 6vw, 30px);
+         padding-right: clamp(18px, 6vw, 30px);
+     }
+
+     .home-page .hero-copy-cluster {
+         transform: translateY(20px);
+     }
+
+     .home-page .hero-copy-image {
+         width: min(74vw, 480px);
+     }
+
+     .home-page .hero-title-sub-central {
+         width: min(100%, 340px);
+     }
+
+     .home-page .hero-description-central {
+         width: min(100%, 34rem);
+     }
+
+     .home-page .mono-block {
+         margin-bottom: 80px;
+     }
+
+     .home-page .hero-central + .section {
+         padding-bottom: 2.6rem;
+     }
+
+     .home-page .mono-block:not(.home-reviews) > p {
+         max-width: 34rem;
+         line-height: 1.85;
+     }
+
+     .home-page .review-grid {
+         grid-template-columns: 1fr;
+     }
+
+     .home-page .review-entry {
+         padding: 30px 4px 32px;
+     }
+
+     .home-page .review-entry + .review-entry {
+         border-top: 1px solid rgba(0, 51, 102, 0.16);
+         border-left: 0;
+     }
+
+     .home-page .reviews-facebook-exit {
+         margin-top: 36px;
+     }
+
+     .home-page .mono-stack .home-final-headline {
+         max-width: 620px;
+         font-size: clamp(2.35rem, 8vw, 3.4rem);
+     }
+
+     .home-page .home-final-cta p.final-cta-body {
+         max-width: 34rem;
+     }
+
+     .home-page .home-final-action {
+         width: min(100%, 320px);
+         padding: 16px 10px;
+     }
+
+     .home-page .home-final-cta {
+         margin-bottom: 64px;
+     }
+
+     .home-page .home-footer-boundary {
+         margin-top: max(12vh, 80px);
+         margin-bottom: max(12vh, 80px);
+     }
+ }
+
+ @media (max-width: 480px) {
+     .home-page .hero-copy-cluster {
+         transform: translateY(12px);
+     }
+
+     .home-page .home-final-heading-group {
+         margin-bottom: 28px;
+     }
+
+     .home-page .mono-stack .home-final-headline {
+         font-size: clamp(2.25rem, 11vw, 2.85rem);
+         line-height: 1.08;
+     }
+
+     .home-page .home-final-action-group {
+         margin-top: 36px;
+     }
  }
 
  /* ===== BOOKING INPUT (MONOLITH FORM) ===== */

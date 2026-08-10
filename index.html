@@ -43,7 +43,6 @@
                         "@id": "https://nihongomaster.education/#organization"
                     },
                     "sameAs": [
-                        "https://www.instagram.com/yoshi_japanese_tutor/",
                         "https://www.facebook.com/Yoshi.Japanese.Tutor"
                     ]
                 }
@@ -53,7 +52,7 @@
 </head>
 
 
-<body>
+<body class="home-page">
     <div id="global-header"></div>
 
     <main>
@@ -65,22 +64,26 @@
                         decoding="async">
                 </div>
 
-                <h1 class="hero-title-max">Not for everyone.</h1>
+                <h1 class="visually-hidden">Make Japanese Yours.</h1>
+                <div class="hero-copy-cluster">
+                    <img src="assets/img/Make_Japanese_Yours.svg" alt="" class="hero-copy-image" aria-hidden="true"
+                        decoding="async">
 
-                <h2 class="hero-title-sub-central mincho">
-                    For those serious about mastering Japanese.
-                </h2>
+                    <h2 class="hero-title-sub-central mincho">
+                        For those building a life that needs it.
+                    </h2>
 
-                <div class="hero-description-central">
-                    <p class="p-highlight">Fully personalized. No shortcuts. No guesswork.</p>
-                    <p class="p-filter">Only for learners with clear goals and commitment.</p>
-                </div>
+                    <div class="hero-description-central">
+                        <p class="p-highlight">Fully personalized. Grounded in real situations. Refined through
+                            consistent practice.</p>
+                    </div>
 
-                <div class="hero-cta-area-central">
-                    <a href="/contact.html" class="cta-link-central"
-                        onclick="gtag('event', 'cta_click', { 'button_name': 'home_apply_for_enrollment_hero' });">
-                        Apply for Enrollment <span class="cta-arrow">→</span>
-                    </a>
+                    <div class="hero-cta-area-central">
+                        <a href="/contact.html" class="cta-link-central"
+                            onclick="gtag('event', 'cta_click', { 'button_name': 'home_start_free_consultation_hero' });">
+                            Start with a Free Consultation <span class="cta-arrow">→</span>
+                        </a>
+                    </div>
                 </div>
 
             </div>
@@ -108,7 +111,7 @@
                 <!-- Block 2 -->
                 <div class="mono-block">
                     <div class="mono-heading-group">
-                        <span class="mono-eyebrow">ADMISSION CRITERIA</span>
+                        <span class="mono-eyebrow">WHO IT’S FOR</span>
                         <h2 class="mono-heading">For a Certain Kind of Learner</h2>
                     </div>
                     <p style="margin-top: 0;">
@@ -125,11 +128,12 @@
                 <!-- Block 3 -->
                 <div class="mono-block" style="text-align: center;">
                     <div class="mono-heading-group">
-                        <span class="mono-eyebrow">THE FOUNDER</span>
+                        <span class="mono-eyebrow">THE TUTOR</span>
                     </div>
                     <img src="/assets/img/The Coach.JPG" alt="Yoshi" class="portrait-img" loading="lazy"
                         decoding="async"
                         style="max-width: 100%; width: 120px; filter: grayscale(100%); opacity: 0.85; margin: 40px auto 40px; display: block; border-radius: 2px;">
+                    <p class="tutor-introduction">Meet Yoshi.</p>
                 </div>
 
                 <!-- Block 4 -->
@@ -168,32 +172,99 @@
                     <p>This is the kind of progress we design for. Enough Japanese to act, not just to study.</p>
                 </div>
 
-                <!-- Instagram -->
-                <div class="mono-block">
-                    <p class="mono-subtitle-strong">Ongoing Practice</p>
-                    <div class="insta-embed-container"
-                        style="width: 100%; max-width: 420px; margin: 40px auto 0; display: flex; align-items: center; justify-content: center;">
-                        <script src="https://elfsightcdn.com/platform.js" async></script>
-                        <div class="elfsight-app-a88216f3-c093-4f7e-bfd5-87a4c54f2bd7" data-elfsight-app-lazy></div>
+                <!-- Facebook Reviews -->
+                <div class="mono-block home-reviews" aria-labelledby="reviews-heading">
+                    <div class="mono-heading-group">
+                        <span class="mono-eyebrow">STUDENT PERSPECTIVES</span>
+                        <h2 class="mono-heading" id="reviews-heading">In Their Own Words</h2>
+                    </div>
+
+                    <div class="review-grid">
+                        <article class="review-entry">
+                            <p class="review-text">“Yoshi is disciplined, serious, patient and practical especially for western learners. His teaching for us was in a way that built on each previous lesson.”</p>
+                            <footer class="review-attribution">
+                                <cite>Oriana Chun</cite>
+                                <span class="review-source">Reviewed on Facebook</span>
+                            </footer>
+                        </article>
+
+                        <article class="review-entry">
+                            <p class="review-text">“He is extremely patient and takes the time to explain things thoroughly, especially when a concept is difficult. He adapts lessons to my pace and learning style, and his flexibility with scheduling has been very helpful.”</p>
+                            <footer class="review-attribution">
+                                <cite>Anna Taber</cite>
+                                <span class="review-source">Reviewed on Facebook</span>
+                            </footer>
+                        </article>
+
+                        <article class="review-entry">
+                            <p class="review-text">“I was extremely impressed when during the first consultation meeting, we discussed my strengths and weaknesses and Yoshi-san said he would prepare a curriculum fit for me since his specialty is JLPT preparation.”</p>
+                            <footer class="review-attribution">
+                                <cite>Emiri Fujimoto</cite>
+                                <span class="review-source">Reviewed on Facebook</span>
+                            </footer>
+                        </article>
+                    </div>
+
+                    <div class="reviews-facebook-exit">
+                        <a href="https://www.facebook.com/Yoshi.Japanese.Tutor/reviews"
+                            class="quiet-text-link reviews-facebook-link" target="_blank" rel="noopener">Read all
+                            reviews on Facebook →</a>
+                    </div>
+                </div>
+
+                <!-- Fees -->
+                <div class="mono-block home-fees" aria-labelledby="fees-heading">
+                    <div class="mono-heading-group">
+                        <span class="mono-eyebrow">FEES &amp; STRUCTURE</span>
+                        <h2 class="mono-heading" id="fees-heading">Fees &amp; Structure</h2>
+                    </div>
+                    <div class="fee-details">
+                        <p class="fee-format">Online Private Lessons</p>
+                        <p class="fee-amount">$50 <span>/ 60 minutes</span></p>
+                        <p class="fee-note"><em>Private lessons begin with a complimentary 30-minute consultation to
+                                discuss your goals, learning background, and whether the teaching approach is a good
+                                fit. Lessons are prepaid and conducted live online.</em></p>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="mono-block home-faq" aria-labelledby="faq-heading">
+                    <div class="mono-heading-group">
+                        <span class="mono-eyebrow">THE FAQ</span>
+                        <h2 class="mono-heading" id="faq-heading">Practical Details</h2>
+                    </div>
+                    <div class="home-faq-list">
+                        <details class="home-faq-item">
+                            <summary><span class="faq-marker">Q.</span> How do payments and scheduling work?</summary>
+                            <div class="home-faq-answer">
+                                <p><span class="faq-marker">A.</span> Once mutual fit is confirmed during our initial
+                                    30-minute consultation, we will agree on your lesson schedule. Payments are accepted
+                                    through Zelle or Cash App and must be completed in advance of your first session.</p>
+                            </div>
+                        </details>
                     </div>
                 </div>
 
                 <!-- Final CTA -->
-                <div class="mono-block" style="text-align: center;">
-                    <p class="mono-subtitle-strong">If This Still Resonates</p>
-                    <p>
-                        If you have read this far and the constraints do not put you off, that is already a useful
-                        signal. The next step is not to “sign up,” but to make a considered introduction. Tell me why
-                        Japanese matters in your life now, what you need it to support, and what you are realistically
-                        willing to invest over the next 12–18 months. I will read your message carefully and reply with
-                        either an invitation to a 30-minute consultation—or a clear explanation if this is not the right
-                        fit.
-                    </p>
-                    <a href="/contact.html" class="mono-btn" style="margin-top: 32px; display: inline-block;"
-                        onclick="gtag('event', 'cta_click', { 'button_name': 'home_request_consideration_footer' });">
-                        Request Consideration →
-                    </a>
+                <div class="mono-block home-final-cta" aria-labelledby="final-cta-heading">
+                    <div class="mono-heading-group home-final-heading-group">
+                        <span class="mono-eyebrow home-final-eyebrow">THE FIRST STEP</span>
+                        <h2 class="mono-heading home-final-headline" id="final-cta-heading">See If This Is the Right
+                            Next Step.</h2>
+                    </div>
+                    <p class="final-cta-body">In a 30-minute consultation, we’ll talk through where you are, what you
+                        need Japanese for, and whether this approach fits what you’re building toward.</p>
+                    <div class="home-final-action-group">
+                        <a href="/contact.html" class="home-final-action"
+                            onclick="gtag('event', 'cta_click', { 'button_name': 'home_request_consultation_footer' });">
+                            <span>Request a Consultation</span><span class="home-final-arrow"
+                                aria-hidden="true">→</span>
+                        </a>
+                        <p class="home-final-meta">30 minutes · Free</p>
+                    </div>
                 </div>
+
+                <div class="home-footer-boundary" aria-hidden="true"></div>
 
             </div>
         </section>
