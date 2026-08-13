@@ -16,7 +16,7 @@
         }).format(date);
     }
 
-    function excerpt(value, maxLength = 360) {
+    function excerpt(value, maxLength = 180) {
         if (typeof value !== "string") return "";
 
         const normalized = value.replace(/\s+/g, " ").trim();

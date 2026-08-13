@@ -1057,7 +1057,7 @@
      width: min(100%, 980px);
      max-width: 980px;
      margin-top: 32px;
-     margin-bottom: max(18vh, 150px);
+     margin-bottom: 48px;
  }
 
  .home-page .home-live-content__frame {
@@ -1464,7 +1464,7 @@
 
      .home-page .home-live-content {
          margin-top: 20px;
-         margin-bottom: max(15vh, 112px);
+         margin-bottom: 48px;
      }
 
      .home-page .home-live-content__frame {
@@ -1550,7 +1550,7 @@
      }
 
      .home-page .home-live-content {
-         margin-bottom: 104px;
+         margin-bottom: 48px;
      }
 
      .home-page .home-live-content__frame {
