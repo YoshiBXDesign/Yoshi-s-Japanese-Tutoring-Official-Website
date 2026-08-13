@@ -1,0 +1,95 @@
+name: Sync Facebook content and deploy Pages
+
+on:
+  schedule:
+    # Temporary cadence: once daily at 00:00 UTC.
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "assets/data/facebook-posts.json"
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - name: Fetch published Facebook posts
+        env:
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_ID: ${{ vars.FACEBOOK_PAGE_ID }}
+          FACEBOOK_GRAPH_API_VERSION: v26.0
+        run: |
+          set -euo pipefail
+          test -n "$FACEBOOK_PAGE_ACCESS_TOKEN"
+          test -n "$FACEBOOK_PAGE_ID"
+
+          curl --silent --show-error --fail-with-body \
+            --get "https://graph.facebook.com/${FACEBOOK_GRAPH_API_VERSION}/${FACEBOOK_PAGE_ID}/published_posts" \
+            --header "Authorization: Bearer ${FACEBOOK_PAGE_ACCESS_TOKEN}" \
+            --data-urlencode "fields=id,message,created_time,permalink_url,full_picture" \
+            --data-urlencode "limit=10" \
+            --output "${RUNNER_TEMP}/facebook-response.json"
+
+      - name: Build public feed JSON
+        run: node scripts/transform-facebook-posts.mjs "${RUNNER_TEMP}/facebook-response.json" assets/data/facebook-posts.json
+
+      - name: Commit changed content
+        id: commit
+        run: |
+          set -euo pipefail
+          git add assets/data/facebook-posts.json
+
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: sync Facebook live content"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    if: always() && (needs.sync.result == 'success' || needs.sync.result == 'skipped')
+    needs: sync
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out latest main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
